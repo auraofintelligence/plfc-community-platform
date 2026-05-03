@@ -124,6 +124,8 @@ const fallbackFieldData = {
   solunarCalendar: [],
   tideCurve: [],
   weatherVisuals: [],
+  mapLocations: [],
+  loggedRoutes: [],
   windows: [],
   monitors: [],
   mediaItems: [],
@@ -291,6 +293,106 @@ function renderWeatherVisuals(target, items) {
   });
 }
 
+function locationDetailMarkup(location) {
+  if (!location) {
+    return `
+      <p class="eyebrow">Selected zone</p>
+      <h3>Tap a map point</h3>
+      <p>Choose a broad location to view sample retroactive data, media counts, team logs and privacy status.</p>
+    `;
+  }
+
+  return `
+    <p class="eyebrow">${location.type || "Map zone"}</p>
+    <h3>${location.label || "Selected zone"}</h3>
+    <p>${location.latest || "Latest summary pending."}</p>
+    <dl class="location-meta">
+      <dt>Zone</dt><dd>${location.zone || "Broad zone"}</dd>
+      <dt>Team</dt><dd>${location.team || "Pending"}</dd>
+      <dt>Media</dt><dd>${location.media || "Pending"}</dd>
+      <dt>Privacy</dt><dd>${location.privacy || "Permission pending"}</dd>
+      <dt>Skill feed</dt><dd>${location.agentSkill || "Agent feed pending"}</dd>
+    </dl>
+    <p class="permission-note">${location.permission || "Do not publish sensitive location details without permission."}</p>
+    <p>${location.story || ""}</p>
+  `;
+}
+
+function selectLocation(location, mapTarget, listTarget, detailTarget) {
+  if (!location || !detailTarget) return;
+
+  detailTarget.innerHTML = locationDetailMarkup(location);
+
+  [mapTarget, listTarget].forEach((target) => {
+    if (!target) return;
+    target.querySelectorAll("[data-location-id]").forEach((node) => {
+      node.classList.toggle("is-selected", node.getAttribute("data-location-id") === location.id);
+    });
+  });
+}
+
+function renderMapLocations(data) {
+  const mapTarget = document.querySelector("[data-location-map]");
+  const listTarget = document.querySelector("[data-location-list]");
+  const detailTarget = document.querySelector("[data-location-detail]");
+  const locations = data.mapLocations || [];
+
+  if (!mapTarget || !listTarget || !detailTarget) return;
+
+  mapTarget.replaceChildren();
+  listTarget.replaceChildren();
+
+  locations.forEach((location, index) => {
+    const marker = document.createElement("button");
+    marker.className = "map-marker";
+    marker.type = "button";
+    marker.dataset.locationId = location.id || `location-${index}`;
+    marker.style.left = `${Number(location.x) || 50}%`;
+    marker.style.top = `${Number(location.y) || 50}%`;
+    marker.setAttribute("aria-label", `Open ${location.label}`);
+    marker.innerHTML = `<span>${index + 1}</span>`;
+
+    const card = document.createElement("button");
+    card.className = "location-choice";
+    card.type = "button";
+    card.dataset.locationId = marker.dataset.locationId;
+    card.innerHTML = `
+      <span>${location.type || "Zone"}</span>
+      <strong>${location.label || "Location"}</strong>
+      <small>${location.privacy || "Privacy pending"}</small>
+    `;
+
+    marker.addEventListener("click", () => selectLocation(location, mapTarget, listTarget, detailTarget));
+    card.addEventListener("click", () => selectLocation(location, mapTarget, listTarget, detailTarget));
+
+    mapTarget.appendChild(marker);
+    listTarget.appendChild(card);
+  });
+
+  selectLocation(locations[0], mapTarget, listTarget, detailTarget);
+}
+
+function renderRoutes(target, routes) {
+  if (!target) return;
+  target.replaceChildren();
+
+  routes.forEach((route) => {
+    const card = document.createElement("article");
+    card.className = "route-card";
+    card.innerHTML = `
+      <p class="category">${route.visibility || "Route visibility"}</p>
+      <h3>${route.label || "Logged route"}</h3>
+      <p>${route.zones || "Broad zones pending."}</p>
+      <dl class="location-meta">
+        <dt>Consent</dt><dd>${route.consent || "Pending"}</dd>
+        <dt>Media</dt><dd>${route.media || "Pending"}</dd>
+      </dl>
+      <p>${route.story || ""}</p>
+    `;
+    target.appendChild(card);
+  });
+}
+
 function renderFieldData(data) {
   document.querySelectorAll("[data-field]").forEach((node) => {
     const path = node.getAttribute("data-field");
@@ -307,6 +409,8 @@ function renderFieldData(data) {
   renderSolunarCalendar(document.querySelector("[data-solunar-calendar]"), data.solunarCalendar || []);
   renderTideCurve(document.querySelector("[data-tide-curve]"), data.tideCurve || []);
   renderWeatherVisuals(document.querySelector("[data-weather-visuals]"), data.weatherVisuals || []);
+  renderMapLocations(data);
+  renderRoutes(document.querySelector("[data-route-list]"), data.loggedRoutes || []);
 }
 
 async function loadFieldData() {

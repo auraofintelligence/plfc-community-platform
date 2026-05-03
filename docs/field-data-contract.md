@@ -28,6 +28,8 @@ Another agent, cron job or future backend can update that file. The website then
 - `tideCurve` - simple tide-height points for a visual bar curve.
 - `monitors` - condition tiles.
 - `weatherVisuals` - gauge-style weather readings such as wind, swell, UV and rain.
+- `mapLocations` - broad map zones with sample agent-skill feed names, privacy status and story summaries.
+- `loggedRoutes` - after-the-event route summaries with consent, visibility and media status.
 - `mediaItems` - photo, video and note queue.
 - `mapLayers` - future digital twin layers.
 

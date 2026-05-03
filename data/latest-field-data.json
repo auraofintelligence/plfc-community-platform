@@ -281,6 +281,124 @@
       "tone": "good"
     }
   ],
+  "mapLocations": [
+    {
+      "id": "point-lookout",
+      "label": "Point Lookout Headland",
+      "zone": "North-east Minjerribah",
+      "x": 73,
+      "y": 20,
+      "type": "Competition launch",
+      "privacy": "Broad public zone",
+      "agentSkill": "field-snapshot:point-lookout",
+      "latest": "Sample comp start area with wind, tide and media notes attached.",
+      "team": "4 checked in, 2 location-share consent records.",
+      "media": "18 photos, 3 clips, 1 wrap-up note.",
+      "permission": "Public story allowed after media review; precise GPS remains private.",
+      "story": "Useful as a public-facing competition story point without exposing private fishing spots."
+    },
+    {
+      "id": "amity",
+      "label": "Amity / bay side",
+      "zone": "North-west Minjerribah",
+      "x": 55,
+      "y": 38,
+      "type": "Sheltered check-in",
+      "privacy": "Member-only detail",
+      "agentSkill": "field-snapshot:amity",
+      "latest": "Sample sheltered-bay check-in with lower swell and volunteer notes.",
+      "team": "2 checked in, no public location trail.",
+      "media": "7 photos, 2 notes.",
+      "permission": "Show summary only. Private member data stays off the public site.",
+      "story": "Good for volunteer, junior and bay-side participation records."
+    },
+    {
+      "id": "dunwich",
+      "label": "Dunwich connection",
+      "zone": "Western Minjerribah",
+      "x": 48,
+      "y": 75,
+      "type": "Logistics and ferry link",
+      "privacy": "Operational summary",
+      "agentSkill": "field-snapshot:dunwich",
+      "latest": "Sample logistics node for arrivals, supplies and island access timing.",
+      "team": "1 organiser check-in, route hidden.",
+      "media": "3 logistics photos, 1 admin note.",
+      "permission": "Operational detail for committee only; public page can show broad access story.",
+      "story": "Useful for planning event access and post-event evidence without tracking individuals."
+    },
+    {
+      "id": "peel-island",
+      "label": "Peel Island broad zone",
+      "zone": "Central Moreton Bay",
+      "x": 43,
+      "y": 62,
+      "type": "On-water observation",
+      "privacy": "Restricted",
+      "agentSkill": "field-snapshot:peel-zone",
+      "latest": "Sample on-water observation zone with weather and tide context only.",
+      "team": "Team log available to authorised roles.",
+      "media": "5 private photos pending permission.",
+      "permission": "No precise public route. Show broad zone and condition summary only.",
+      "story": "The map can prove activity happened without publishing sensitive or private locations."
+    },
+    {
+      "id": "mainland",
+      "label": "Mainland support",
+      "zone": "Cleveland / mainland edge",
+      "x": 18,
+      "y": 58,
+      "type": "Support and sponsor link",
+      "privacy": "Public-safe",
+      "agentSkill": "field-snapshot:mainland-support",
+      "latest": "Sample sponsor, supply or volunteer coordination point.",
+      "team": "No live tracking.",
+      "media": "2 public-safe photos, 1 sponsor note.",
+      "permission": "Public summary usually safe after sponsor approval.",
+      "story": "Useful for showing how the club connects island activity with broader Moreton Bay support."
+    },
+    {
+      "id": "south-beach",
+      "label": "South beach broad zone",
+      "zone": "Ocean side Minjerribah",
+      "x": 72,
+      "y": 103,
+      "type": "Beach observation",
+      "privacy": "Broad zone only",
+      "agentSkill": "field-snapshot:south-beach",
+      "latest": "Sample beach activity zone with tide, wind and media queue summary.",
+      "team": "3 checked in, exact path hidden.",
+      "media": "9 photos, 1 short clip, 2 result notes.",
+      "permission": "Public only after review; no precise fishing spot exposure.",
+      "story": "Good demonstration of retroactive field storytelling with privacy permissions intact."
+    }
+  ],
+  "loggedRoutes": [
+    {
+      "label": "Team A comp morning",
+      "zones": "Point Lookout -> broad ocean-side zone -> weigh-in",
+      "visibility": "Committee only",
+      "consent": "3 of 3 consented to event-bound location sharing",
+      "media": "22 media items attached",
+      "story": "Public page can say the team completed the event loop without publishing the actual track."
+    },
+    {
+      "label": "Volunteer clean-up sweep",
+      "zones": "Amity bay side -> access point -> disposal note",
+      "visibility": "Public summary allowed",
+      "consent": "Location summarised after the event",
+      "media": "11 photos, 4 field notes",
+      "story": "Useful grant evidence: volunteer effort, broad location, outcomes and images."
+    },
+    {
+      "label": "Media collection run",
+      "zones": "Dunwich connection -> Point Lookout -> wrap-up",
+      "visibility": "Private until reviewed",
+      "consent": "Media permissions mixed",
+      "media": "7 clips pending approval",
+      "story": "Shows how uploaded video can sit in a queue before public storytelling."
+    }
+  ],
   "mediaItems": [
     {
       "label": "Photos",

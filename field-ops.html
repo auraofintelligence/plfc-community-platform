@@ -155,6 +155,61 @@
         <div class="weather-console" data-weather-visuals aria-label="Weather gauge visualisations"></div>
       </section>
 
+      <section class="section" id="moreton-map" aria-labelledby="map-title">
+        <div class="section-heading">
+          <p class="eyebrow">Moreton Bay map picker</p>
+          <h2 id="map-title">Touchable zones that open local field stories</h2>
+          <p>
+            This is a privacy-aware example map. It uses broad zones, not precise public GPS. A future agent skill can refresh each location record after comps, working bees or media uploads.
+          </p>
+        </div>
+        <div class="map-layout">
+          <div class="bay-map" aria-label="Stylised Moreton Bay and Minjerribah map">
+            <svg class="bay-map-art" viewBox="0 0 100 140" role="img" aria-label="Stylised map of Moreton Bay, mainland, islands and ocean">
+              <defs>
+                <linearGradient id="bayWater" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#8fd8ee" />
+                  <stop offset="100%" stop-color="#047fa8" />
+                </linearGradient>
+                <linearGradient id="sandEdge" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#fffdf7" />
+                  <stop offset="100%" stop-color="#dfe9c8" />
+                </linearGradient>
+              </defs>
+              <rect width="100" height="140" rx="7" fill="url(#bayWater)" />
+              <path d="M0 0h29c-6 14-9 28-8 43 1 18-8 31-5 49 3 16 12 28 7 48H0z" fill="#507f59" opacity="0.95" />
+              <path d="M63 9c11 18 15 39 12 61-3 25 8 42 5 61-7 4-15 5-24 3 4-20-2-38-1-56 1-23-8-42-2-66z" fill="url(#sandEdge)" stroke="#fffdf7" stroke-width="1.2" />
+              <path d="M72 15c6 18 8 35 5 51-2 12 4 26 5 40" fill="none" stroke="#0aa47f" stroke-width="2" opacity="0.6" />
+              <path d="M43 72c5 8 7 19 5 32-7 1-12-1-15-6 3-10 4-18 2-24z" fill="#fbf7ea" opacity="0.9" />
+              <path d="M47 43c3 5 4 11 2 18-5 0-8-2-10-6 1-6 2-10 1-13z" fill="#fbf7ea" opacity="0.9" />
+              <path d="M27 20c12 5 20 13 24 24M26 116c16-6 29-7 42-2" fill="none" stroke="#fffdf7" stroke-width="0.8" opacity="0.45" />
+              <text x="7" y="18" fill="#fffdf7" font-size="4.8" font-family="Arial" font-weight="700">MAINLAND</text>
+              <text x="55" y="23" fill="#07445f" font-size="4.6" font-family="Arial" font-weight="700">MINJERRIBAH</text>
+              <text x="35" y="67" fill="#07445f" font-size="4.2" font-family="Arial" font-weight="700">MORETON BAY</text>
+              <text x="74" y="122" fill="#07445f" font-size="4" font-family="Arial" font-weight="700">OCEAN</text>
+            </svg>
+            <div class="map-location-layer" data-location-map></div>
+          </div>
+          <aside class="location-detail" data-location-detail aria-live="polite">
+            <p class="eyebrow">Selected zone</p>
+            <h3>Tap a map point</h3>
+            <p>Choose a broad location to view sample retroactive data, media counts, team logs and privacy status.</p>
+          </aside>
+        </div>
+        <div class="location-list" data-location-list aria-label="Map location picker list"></div>
+      </section>
+
+      <section class="section pale" id="logged-routes" aria-labelledby="routes-title">
+        <div class="section-heading">
+          <p class="eyebrow">Retro team logs</p>
+          <h2 id="routes-title">Team movement shown as permissioned summaries</h2>
+          <p>
+            Instead of public live tracking, the site can show after-the-event logs: who consented, what broad zones were visited, what media was captured, and what stays private.
+          </p>
+        </div>
+        <div class="route-board" data-route-list aria-label="Retro team route summaries"></div>
+      </section>
+
       <section class="section pale" id="team" aria-labelledby="team-title">
         <div class="section-heading">
           <p class="eyebrow">Team coordination</p>
