@@ -436,4 +436,129 @@ async function loadFieldData() {
   }
 }
 
+function renderHonourBoard(data) {
+  document.querySelectorAll("[data-honour]").forEach((node) => {
+    const path = node.getAttribute("data-honour");
+    const value = path ? getFieldValue(data, path) : undefined;
+    if (value !== undefined && value !== null) {
+      node.textContent = String(value);
+    }
+  });
+
+  const legend = document.querySelector("[data-honour-map-legend]");
+  if (legend) {
+    legend.replaceChildren(...(data.map?.legend || []).map((item) => {
+      const pill = document.createElement("span");
+      pill.textContent = item;
+      return pill;
+    }));
+  }
+
+  const summary = document.querySelector("[data-honour-summary]");
+  if (summary) {
+    summary.replaceChildren(...(data.catchLedger?.summary || []).map((item) => {
+      const card = document.createElement("article");
+      card.innerHTML = `
+        <span>${item.label || "Metric"}</span>
+        <strong>${item.value || "--"}</strong>
+        <p>${item.detail || ""}</p>
+      `;
+      return card;
+    }));
+  }
+
+  const species = document.querySelector("[data-honour-species]");
+  if (species) {
+    species.replaceChildren(...(data.catchLedger?.species || []).map((item) => {
+      const row = document.createElement("div");
+      row.className = "species-row";
+      row.innerHTML = `<span>${item.name || "Species"}</span><strong>${item.records || 0}</strong>`;
+      return row;
+    }));
+  }
+
+  const results = document.querySelector("[data-honour-results]");
+  if (results) {
+    results.replaceChildren(...(data.catchLedger?.recentResults || []).map((item) => {
+      const row = document.createElement("div");
+      row.className = "result-row";
+      row.innerHTML = `
+        <span>${item.rank || ""}</span>
+        <strong>${item.event || "Event"}</strong>
+        <p>${item.team || ""}</p>
+        <em>${item.points || ""}</em>
+      `;
+      return row;
+    }));
+  }
+
+  const highlights = document.querySelector("[data-honour-highlights]");
+  if (highlights) {
+    highlights.replaceChildren(...(data.honours || []).map((item) => {
+      const card = document.createElement("article");
+      card.innerHTML = `
+        <span>${item.title || "Honour"}</span>
+        <strong>${item.name || ""}</strong>
+        <p>${item.detail || ""}</p>
+      `;
+      return card;
+    }));
+  }
+
+  const events = document.querySelector("[data-honour-events]");
+  if (events) {
+    events.replaceChildren(...(data.community?.events || []).map((item) => {
+      const row = document.createElement("div");
+      row.innerHTML = `<span>${item.date || ""}</span><p>${item.label || ""}</p>`;
+      return row;
+    }));
+  }
+
+  const notices = document.querySelector("[data-honour-notices]");
+  if (notices) {
+    notices.replaceChildren(...(data.community?.notices || []).map((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      return li;
+    }));
+  }
+
+  const bottom = document.querySelector("[data-honour-bottom]");
+  if (bottom) {
+    bottom.replaceChildren(...(data.bottomTiles || []).map((item) => {
+      const tile = document.createElement("article");
+      tile.dataset.tone = item.tone || "ocean";
+      tile.innerHTML = `
+        <span>${item.label || "Tile"}</span>
+        <strong>${item.value || ""}</strong>
+      `;
+      return tile;
+    }));
+  }
+
+  const ticker = document.querySelector("[data-honour-ticker]");
+  if (ticker) {
+    ticker.replaceChildren(...(data.ticker || []).map((item) => {
+      const span = document.createElement("span");
+      span.textContent = item;
+      return span;
+    }));
+  }
+}
+
+async function loadHonourBoard() {
+  if (!document.querySelector("[data-honour-board]")) {
+    return;
+  }
+
+  try {
+    const response = await fetch("data/example-honour-board-tv.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Honour board data unavailable");
+    renderHonourBoard(await response.json());
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 loadFieldData();
+loadHonourBoard();

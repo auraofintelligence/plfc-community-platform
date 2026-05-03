@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Point Lookout Fishing Club honour board TV dashboard concept for wall art installations, kiosks and public-safe club storytelling.">
+    <title>Honour Board | Point Lookout Fishing Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="honour-body">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header honour-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Point Lookout Fishing Club home">
+          <span>Point Lookout</span>
+          <strong>Fishing Club</strong>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Dashboard</a>
+          <a href="commerce.html">Commerce</a>
+          <a href="processes.html">Processes</a>
+          <a href="field-ops.html">Field Ops</a>
+          <a href="data-hub.html">Data Hub</a>
+          <a aria-current="page" href="honour-board.html">Honour Board</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="honour-wall" data-honour-board>
+      <section class="honour-title" aria-labelledby="honour-title">
+        <div class="club-seal" aria-hidden="true">PLFC</div>
+        <div>
+          <p data-honour="brand.place">North Stradbroke Island / Minjerribah</p>
+          <h1 id="honour-title" data-honour="brand.clubName">Point Lookout Fishing Club Inc.</h1>
+          <strong data-honour="brand.tagline">Locals. Legends. Lines in the water.</strong>
+        </div>
+      </section>
+
+      <section class="honour-grid" aria-label="Honour board dashboard">
+        <article class="honour-panel honour-map">
+          <p class="honour-kicker">Island wall map</p>
+          <h2 data-honour="map.title">North Stradbroke Island</h2>
+          <div class="wall-map-art" aria-hidden="true">
+            <span class="wall-pin pin-one"></span>
+            <span class="wall-pin pin-two"></span>
+            <span class="wall-pin pin-three"></span>
+          </div>
+          <div class="wall-legend" data-honour-map-legend></div>
+        </article>
+
+        <article class="honour-panel catch-ledger">
+          <div class="honour-panel-heading">
+            <div>
+              <p class="honour-kicker">Catch ledger</p>
+              <h2>PLFC Honour Board</h2>
+            </div>
+            <span data-honour="updatedLabel">Sample month</span>
+          </div>
+          <div class="honour-stats" data-honour-summary></div>
+          <div class="species-board" data-honour-species></div>
+          <div class="results-board" data-honour-results></div>
+          <div class="honour-highlights">
+            <p class="honour-kicker">Member highlights</p>
+            <div data-honour-highlights></div>
+          </div>
+        </article>
+
+        <article class="honour-panel community-board">
+          <p class="honour-kicker">Community dashboard</p>
+          <div class="next-comp">
+            <span>Next comp</span>
+            <h2 data-honour="community.nextComp.title">Kingfish Classic</h2>
+            <p data-honour="community.nextComp.date">14-15 June 2026</p>
+            <strong data-honour="community.nextComp.status">Entries open now</strong>
+          </div>
+          <div class="condition-pair">
+            <div>
+              <span>Tides</span>
+              <p data-honour="community.tides.high">High pending</p>
+              <p data-honour="community.tides.low">Low pending</p>
+            </div>
+            <div>
+              <span>Weather</span>
+              <p data-honour="community.weather.temperature">--</p>
+              <p data-honour="community.weather.summary">Pending</p>
+            </div>
+          </div>
+          <div class="event-stack" data-honour-events></div>
+          <div class="sponsor-slot">
+            <span data-honour="sponsorSpotlight.name">Sponsor spotlight</span>
+            <p data-honour="sponsorSpotlight.message">Proudly supporting the club.</p>
+          </div>
+          <div class="community-notices">
+            <p class="honour-kicker">Community notices</p>
+            <ul data-honour-notices></ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="honour-bottom" data-honour-bottom aria-label="Bottom honour board tiles"></section>
+      <section class="honour-ticker" data-honour-ticker aria-label="Honour board ticker"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

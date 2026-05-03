@@ -15,6 +15,7 @@ The goal is to give the secretary and committee a working interface they can ins
 - Google Drive, Sheets and Gmail data hub concept for stakeholder routing.
 - Public-safe club journey intelligence distilled from the supplied wrap-up workbook.
 - Google Calendar event-type queue concept for approved competitions, meetings, working bees, renewals, media and sponsor deadlines.
+- Honour board TV concept for wall-art installations, kiosks and public venue displays.
 - Product data scaffold in `data/stripe-products.json`.
 
 ## Pages
@@ -24,13 +25,16 @@ The goal is to give the secretary and committee a working interface they can ins
 - `processes.html` - membership and committee meeting process flows.
 - `field-ops.html` - visual field-ops board for latest tide, solunar, weather, GPS, upload and digital-twin snapshots.
 - `data-hub.html` - Google Drive / Sheets / Gmail data architecture for stakeholder routing.
+- `honour-board.html` - web-app driven TV honour board concept for public-safe club storytelling.
 - `roadmap.html` - AGM roadmap and next actions.
 - `docs/stripe-commerce-plan.md` - plain-English Stripe setup plan.
 - `docs/field-data-contract.md` - JSON handoff contract for a future agent stream or cron job.
 - `docs/example-data-sets.md` - plain-English notes for the example JSON datasets.
+- `docs/honour-board-data-model.md` - public display rules and source-system notes for the honour board.
 - `data/latest-field-data.json` - sample field snapshot used by the Field Ops page.
 - `data/example-public-map-points.json` - small public map point dataset based on the KMZ pattern.
 - `data/example-field-story-export.json` - sample after-event story/simulator export.
+- `data/example-honour-board-tv.json` - sample wall-display payload for the honour board page.
 - `assets/maps/plfc-point-lookout-fishing-club.kmz` - supplied PLFC KMZ source for importing into Google My Maps / Drive.
 - `data/club-journey.json` - public-safe summary layer from the wrap-up workbook.
 - `data/calendar-event-types.json` - prototype Calendar queue rules, not live calendar data.
@@ -55,6 +59,7 @@ The goal is to give the secretary and committee a working interface they can ins
   - `PLFC Wrap-up (1).xlsx`
   - `plfc comp1 photo.jpg`
   - `plfc comp1 wrapup.jpg`
+  - `plfc honour board example.png`
 - Stripe guidance:
   - Payment Links for simple one-time products.
   - Checkout Sessions for web app checkout.

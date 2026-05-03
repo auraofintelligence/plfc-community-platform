@@ -1,0 +1,86 @@
+{
+  "dataset": "PLFC honour board TV example",
+  "purpose": "Public-safe data for web-app driven TV screens, kiosk panels and wall-art installations.",
+  "privacy": "Display only approved names, public counts, public sponsors and broad public map points. Private source ledgers remain in Drive or Sheets.",
+  "updatedLabel": "Sample month - May",
+  "brand": {
+    "clubName": "Point Lookout Fishing Club Inc.",
+    "place": "North Stradbroke Island / Minjerribah",
+    "tagline": "Locals. Legends. Lines in the water."
+  },
+  "ticker": [
+    "Length-photo records support catch and release where chosen.",
+    "Legal fish may still be kept for food; competitions do not require weigh-to-win.",
+    "Respect the water. Respect each other. Respect our island."
+  ],
+  "map": {
+    "title": "North Stradbroke Island",
+    "legend": ["Events", "Catches", "Juniors", "Volunteers", "Sponsors", "Conservation", "Safety"],
+    "featuredPoints": [
+      {"label": "Point Lookout", "kind": "events"},
+      {"label": "Amity Point", "kind": "catches"},
+      {"label": "Dunwich", "kind": "volunteers"}
+    ]
+  },
+  "catchLedger": {
+    "month": "May",
+    "summary": [
+      {"label": "Photo length records", "value": "452", "detail": "approved public tally"},
+      {"label": "Fish released", "value": "247", "detail": "where members chose release"},
+      {"label": "Members active", "value": "186", "detail": "+9% vs last month"},
+      {"label": "New members", "value": "12", "detail": "welcome aboard"}
+    ],
+    "species": [
+      {"name": "Kingfish", "records": 152},
+      {"name": "Snapper", "records": 118},
+      {"name": "Mackerel", "records": 96},
+      {"name": "Flathead", "records": 86}
+    ],
+    "recentResults": [
+      {"rank": "1", "event": "Kingfish Classic", "team": "Team Ledger", "points": "214 pts"},
+      {"rank": "2", "event": "Mothers Day Shootout", "team": "Reel Women", "points": "176 pts"},
+      {"rank": "3", "event": "Weekend Warriors", "team": "Hooked Up", "points": "143 pts"}
+    ]
+  },
+  "honours": [
+    {"title": "Junior Angler", "name": "Lily M.", "detail": "Largest snapper - 78 cm"},
+    {"title": "Most Improved", "name": "Jake R.", "detail": "+35 points vs last month"},
+    {"title": "Safety First", "name": "Zero incidents", "detail": "This month - thank you"}
+  ],
+  "community": {
+    "nextComp": {
+      "title": "Kingfish Classic",
+      "date": "14-15 June 2026",
+      "status": "Entries open now"
+    },
+    "tides": {"high": "10:24 am / 1.68 m", "low": "4:37 pm / 0.42 m"},
+    "weather": {"temperature": "21 C", "summary": "Sunny - NE 12 kt"},
+    "events": [
+      {"date": "24 May", "label": "Club Social - Trivia Night"},
+      {"date": "7 Jun", "label": "Kids Fishing Clinic"},
+      {"date": "14-15 Jun", "label": "Kingfish Classic"}
+    ],
+    "notices": [
+      "Log all catches via the kiosk or app.",
+      "Check rules, weather and measuring photos before submitting.",
+      "Look out for each other. Enjoy our island safely."
+    ]
+  },
+  "sponsorSpotlight": {
+    "name": "Sample marine sponsor",
+    "message": "Proudly supporting our club and community."
+  },
+  "bottomTiles": [
+    {"label": "Crew vs crew", "value": "New crew comp is tracking", "tone": "ocean"},
+    {"label": "Local vs visitor", "value": "71% local participation", "tone": "emerald"},
+    {"label": "Species watch", "value": "Sustainable records only", "tone": "gold"},
+    {"label": "Ripple effect", "value": "One action. Many benefits.", "tone": "purple"},
+    {"label": "Idea to action", "value": "New wash-down station installed", "tone": "reef"}
+  ],
+  "displayRules": [
+    "Optimise for 16:9 TV and kiosk screens.",
+    "Use large type, high contrast and low-motion transitions.",
+    "No private member contact details, precise GPS or unapproved child images.",
+    "All honours must be approved before display."
+  ]
+}
