@@ -1,0 +1,73 @@
+{
+  "status": "prototype_only_not_live",
+  "timezone": "Australia/Brisbane",
+  "creationRule": "Calendar events begin as rows in a private Sheet queue. A real Google Calendar event should only be created after the event type, owner, visibility, invite group and reminders are approved.",
+  "eventTypes": [
+    {
+      "id": "competition",
+      "label": "Competition",
+      "calendarLane": "PLFC Competitions",
+      "sourceSheet": "Events",
+      "ownerRole": "Field lead",
+      "visibility": "private",
+      "defaultReminders": ["7 days email", "24 hours email", "2 hours popup"],
+      "publicExport": "Broad event date, check-in window and approved wrap-up only",
+      "privacyRule": "No precise team GPS or private member details in public exports."
+    },
+    {
+      "id": "committee-meeting",
+      "label": "Committee meeting",
+      "calendarLane": "PLFC Committee",
+      "sourceSheet": "ActionRegister",
+      "ownerRole": "Secretary",
+      "visibility": "private",
+      "defaultReminders": ["7 days email", "3 days email", "1 hour popup"],
+      "publicExport": "Approved minutes or public update only",
+      "privacyRule": "Draft agenda, recordings and transcripts stay private until approved."
+    },
+    {
+      "id": "working-bee",
+      "label": "Working bee",
+      "calendarLane": "PLFC Volunteers",
+      "sourceSheet": "Events",
+      "ownerRole": "Volunteer coordinator",
+      "visibility": "default",
+      "defaultReminders": ["7 days email", "24 hours email"],
+      "publicExport": "Approved volunteer callout and after-action story",
+      "privacyRule": "Volunteer contact lists stay private."
+    },
+    {
+      "id": "renewal-cycle",
+      "label": "Membership renewal cycle",
+      "calendarLane": "PLFC Admin",
+      "sourceSheet": "Members",
+      "ownerRole": "Secretary",
+      "visibility": "private",
+      "defaultReminders": ["30 days email", "7 days email"],
+      "publicExport": "General renewal campaign only",
+      "privacyRule": "Individual renewal status stays private."
+    },
+    {
+      "id": "content-publishing",
+      "label": "Content publishing",
+      "calendarLane": "PLFC Media",
+      "sourceSheet": "MediaQueue",
+      "ownerRole": "Media lead",
+      "visibility": "default",
+      "defaultReminders": ["3 days email", "24 hours popup"],
+      "publicExport": "Approved post copy, media and sponsor-safe caption",
+      "privacyRule": "Unreviewed media and names stay private."
+    },
+    {
+      "id": "grant-sponsor-deadline",
+      "label": "Grant or sponsor deadline",
+      "calendarLane": "PLFC Grants and Sponsors",
+      "sourceSheet": "PublicExports",
+      "ownerRole": "Secretary",
+      "visibility": "private",
+      "defaultReminders": ["30 days email", "14 days email", "3 days email"],
+      "publicExport": "Approved sponsor acknowledgement or grant outcome",
+      "privacyRule": "Negotiations, finance details and drafts stay private."
+    }
+  ]
+}

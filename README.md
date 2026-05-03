@@ -13,6 +13,8 @@ The goal is to give the secretary and committee a working interface they can ins
 - AGM roadmap page using the supplied roadmap visual.
 - Field Ops visualisations for solunar/tide planning, tide shape, weather gauges, touchable Moreton Bay map zones, media queues and future digital-twin layers.
 - Google Drive, Sheets and Gmail data hub concept for stakeholder routing.
+- Public-safe club journey intelligence distilled from the supplied wrap-up workbook.
+- Google Calendar event-type queue concept for approved competitions, meetings, working bees, renewals, media and sponsor deadlines.
 - Product data scaffold in `data/stripe-products.json`.
 
 ## Pages
@@ -26,6 +28,10 @@ The goal is to give the secretary and committee a working interface they can ins
 - `docs/stripe-commerce-plan.md` - plain-English Stripe setup plan.
 - `docs/field-data-contract.md` - JSON handoff contract for a future agent stream or cron job.
 - `data/latest-field-data.json` - sample field snapshot used by the Field Ops page.
+- `data/club-journey.json` - public-safe summary layer from the wrap-up workbook.
+- `data/calendar-event-types.json` - prototype Calendar queue rules, not live calendar data.
+- `templates/PLFC Backend Starter Workbook.xlsx` - starter workbook for importing into Google Sheets.
+- `templates/PLFC Backend Governance Starter Pack.docx` - starter governance pack for committee review.
 
 ## Sources Used
 
@@ -42,6 +48,7 @@ The goal is to give the secretary and committee a working interface they can ins
   - `PLFC  Meetings Flow Chart.png`
   - `PLFC  Members Flow Chart.png`
   - `PLFC AGM Roadmap.png`
+  - `PLFC Wrap-up (1).xlsx`
   - `plfc comp1 photo.jpg`
   - `plfc comp1 wrapup.jpg`
 - Stripe guidance:
@@ -73,6 +80,7 @@ Suggested private storage pattern:
 - Drive folders for raw files, uploads, minutes, finance exports and media.
 - Sheets for member ledgers, competition records, permissions, payments and action registers.
 - Gmail labels for inbound requests and outbound confirmation trails.
+- Calendar queues for approved meetings, competitions, working bees, renewals, content deadlines and sponsor/grant deadlines.
 - Public-safe JSON exports for the GitHub Pages website.
 
 ## Running Locally

@@ -1,0 +1,78 @@
+{
+  "source": "PLFC Wrap-up (1).xlsx",
+  "publicSafeStatus": "Summarised for prototype use. Do not publish private account ownership, raw admin notes, private subscription details or unreviewed committee material.",
+  "reviewedForPrototypeOn": "2026-05-03",
+  "storyBeats": [
+    {
+      "phase": "Formation and legitimacy",
+      "summary": "The club has a governing constitution, administrative identity, banking setup, meeting records and an existing public website.",
+      "siteUse": "Show that the platform is extending an existing club, not inventing one from scratch."
+    },
+    {
+      "phase": "Digital operating base",
+      "summary": "Google Workspace, Gmail, Drive, Sheets, Forms, Calendar and Apps Script are already part of the intended operating stack.",
+      "siteUse": "Frame GitHub Pages as the public layer fed by private Google-led operations."
+    },
+    {
+      "phase": "Community reach",
+      "summary": "The club has active Facebook, Instagram, YouTube and TikTok channels, with stronger reach on Facebook than the newer channels.",
+      "siteUse": "Show content and event stories as reusable public outputs across website and social channels."
+    },
+    {
+      "phase": "Capacity constraint",
+      "summary": "Membership, volunteers and committee bandwidth are the main growth constraints after a quiet period.",
+      "siteUse": "Make onboarding, renewals, volunteering and prompt committee packs central to the design."
+    },
+    {
+      "phase": "Field and media evolution",
+      "summary": "The club wants better event wrap-ups, media workflows, map references, solunar planning, weather context and privacy-aware field summaries.",
+      "siteUse": "Keep Field Ops visual, permission-aware and export-driven."
+    },
+    {
+      "phase": "Future digital twin pathway",
+      "summary": "The longer-range vision includes offline-first apps, catch logging, selective GPS sharing, conservation data, sponsor pins and future simulation-ready local data.",
+      "siteUse": "Treat the current website as a simple demonstration layer that can grow into richer tools later."
+    }
+  ],
+  "operatingAssets": [
+    "Constitution and committee records",
+    "Public website and social channels",
+    "Google Workspace operating stack",
+    "Drive folder strategy",
+    "Content calendar and idea intake form",
+    "Apps Script automation strategy",
+    "Event wrap-up checklist",
+    "Sponsor and merch concepts",
+    "Moreton Bay fishing and conservation map references",
+    "Super-app and offline-first app concept"
+  ],
+  "priorityConstraints": [
+    "Grow active membership and volunteer participation",
+    "Reduce secretary and committee admin load",
+    "Turn informal chat and document archives into clear action queues",
+    "Protect member privacy, precise GPS and unapproved media",
+    "Confirm account ownership, access groups and approval rules before live automation"
+  ],
+  "backendImplications": [
+    {
+      "system": "Google Drive",
+      "role": "Private vault for minutes, source documents, finance exports, raw media and permission evidence."
+    },
+    {
+      "system": "Google Sheets",
+      "role": "Structured ledgers for members, payments, events, permissions, media, actions, calendar queues and public exports."
+    },
+    {
+      "system": "Google Calendar",
+      "role": "Approved schedule layer for committee meetings, competitions, working bees, content deadlines and renewal cycles."
+    },
+    {
+      "system": "Gmail",
+      "role": "Inbound and outbound communication trail for renewals, notices, confirmations, sponsor contact and permission requests."
+    },
+    {
+      "system": "GitHub Pages",
+      "role": "Public-safe storytelling and visualisation layer, never the private source of truth."
+    }
+  ]
+}

@@ -1474,7 +1474,9 @@ p {
 
 .data-flow-grid,
 .stakeholder-grid,
-.timing-grid {
+.timing-grid,
+.journey-intel-grid,
+.calendar-grid {
   display: grid;
   gap: 1rem;
 }
@@ -1491,9 +1493,19 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.journey-intel-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.calendar-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .data-flow-grid article,
 .stakeholder-grid article,
 .timing-grid article,
+.journey-intel-grid article,
+.calendar-grid article,
 .folder-tree,
 .vault-notes article {
   background: rgba(255, 253, 247, 0.94);
@@ -1505,6 +1517,8 @@ p {
 .data-flow-grid article,
 .stakeholder-grid article,
 .timing-grid article,
+.journey-intel-grid article,
+.calendar-grid article,
 .vault-notes article {
   padding: 1.15rem;
 }
@@ -1525,9 +1539,57 @@ p {
 .data-flow-grid p,
 .stakeholder-grid p,
 .timing-grid p,
+.journey-intel-grid p,
+.calendar-grid p,
 .vault-notes p {
   color: var(--titanium);
   margin-top: 0.6rem;
+}
+
+.journey-intel-grid article {
+  border-top: 5px solid var(--emerald);
+}
+
+.journey-intel-grid article:nth-child(2) {
+  border-top-color: var(--ocean);
+}
+
+.journey-intel-grid article:nth-child(3) {
+  border-top-color: var(--gold);
+}
+
+.journey-intel-grid article:nth-child(4) {
+  border-top-color: var(--purple);
+}
+
+.journey-thread {
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(8, 185, 139, 0.16), rgba(114, 81, 181, 0.12)),
+    var(--shell);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.journey-thread span {
+  background: rgba(255, 253, 247, 0.86);
+  border: 1px solid rgba(8, 185, 139, 0.22);
+  border-radius: 999px;
+  color: var(--deep-ocean);
+  font-family: var(--heading);
+  font-size: 0.86rem;
+  font-weight: 900;
+  padding: 0.7rem 0.75rem;
+  text-align: center;
+}
+
+.calendar-grid article {
+  border-left: 5px solid var(--ocean);
 }
 
 .vault-layout {
@@ -1633,13 +1695,16 @@ p {
   .monitor-board,
   .weather-console,
   .location-list,
-  .route-board,
-  .data-flow-grid,
-  .stakeholder-grid,
-  .timing-grid,
-  .vault-notes,
-  .upload-queue,
-  .twin-board,
+    .route-board,
+    .data-flow-grid,
+    .stakeholder-grid,
+    .timing-grid,
+    .journey-intel-grid,
+    .calendar-grid,
+    .journey-thread,
+    .vault-notes,
+    .upload-queue,
+    .twin-board,
   .privacy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1658,13 +1723,16 @@ p {
   .monitor-board,
   .weather-console,
   .location-list,
-  .route-board,
-  .data-flow-grid,
-  .stakeholder-grid,
-  .timing-grid,
-  .vault-notes,
-  .upload-queue,
-  .twin-board,
+    .route-board,
+    .data-flow-grid,
+    .stakeholder-grid,
+    .timing-grid,
+    .journey-intel-grid,
+    .calendar-grid,
+    .journey-thread,
+    .vault-notes,
+    .upload-queue,
+    .twin-board,
   .privacy-grid {
     grid-template-columns: 1fr;
   }
