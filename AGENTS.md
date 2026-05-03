@@ -33,3 +33,10 @@ This repo is for an exploratory Point Lookout Fishing Club website prototype. Ke
 - A separate agent stream, cron job or backend can update that JSON later.
 - Do not place real member GPS coordinates, phone numbers, emergency contacts or private media URLs in public repo files.
 - Keep field data storytelling broad, consent-aware and safety-first.
+
+## Google Drive Direction
+
+- Treat Google Drive as the private club vault, not as public website content.
+- Do not hard-code the club Gmail address into public files unless explicitly approved.
+- Use Drive for source files and media, Sheets for structured ledgers, and Gmail labels for request/response trails.
+- Public pages should consume approved exports only.

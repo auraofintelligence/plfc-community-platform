@@ -662,6 +662,12 @@ p {
     var(--deep-ocean);
 }
 
+.data-hero {
+  background:
+    linear-gradient(90deg, rgba(7, 68, 95, 0.95), rgba(80, 127, 89, 0.82)),
+    var(--deep-ocean);
+}
+
 .commerce-method {
   background: var(--sand);
 }
@@ -1466,6 +1472,103 @@ p {
   padding: 1.15rem;
 }
 
+.data-flow-grid,
+.stakeholder-grid,
+.timing-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.data-flow-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stakeholder-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timing-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.data-flow-grid article,
+.stakeholder-grid article,
+.timing-grid article,
+.folder-tree,
+.vault-notes article {
+  background: rgba(255, 253, 247, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.data-flow-grid article,
+.stakeholder-grid article,
+.timing-grid article,
+.vault-notes article {
+  padding: 1.15rem;
+}
+
+.data-flow-grid span {
+  color: var(--purple);
+  display: block;
+  font-family: var(--heading);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.data-flow-grid h3 {
+  margin-top: 0.7rem;
+}
+
+.data-flow-grid p,
+.stakeholder-grid p,
+.timing-grid p,
+.vault-notes p {
+  color: var(--titanium);
+  margin-top: 0.6rem;
+}
+
+.vault-layout {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+}
+
+.folder-tree {
+  background:
+    linear-gradient(180deg, rgba(143, 216, 238, 0.24), rgba(255, 253, 247, 0.94)),
+    var(--shell);
+  padding: 1.2rem;
+}
+
+.folder-tree p {
+  border-bottom: 1px solid rgba(16, 34, 52, 0.1);
+  color: var(--deep-ocean);
+  font-family: var(--heading);
+  font-weight: 900;
+  margin: 0;
+  padding: 0.65rem 0;
+}
+
+.folder-tree p:first-child {
+  color: var(--purple);
+  font-size: 1.2rem;
+  padding-top: 0;
+}
+
+.folder-tree p:last-child {
+  border-bottom: 0;
+}
+
+.vault-notes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .upload-story {
   align-items: start;
   display: grid;
@@ -1520,7 +1623,8 @@ p {
   .condition-story,
   .upload-story,
   .solunar-layout,
-  .map-layout {
+  .map-layout,
+  .vault-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1530,6 +1634,10 @@ p {
   .weather-console,
   .location-list,
   .route-board,
+  .data-flow-grid,
+  .stakeholder-grid,
+  .timing-grid,
+  .vault-notes,
   .upload-queue,
   .twin-board,
   .privacy-grid {
@@ -1551,6 +1659,10 @@ p {
   .weather-console,
   .location-list,
   .route-board,
+  .data-flow-grid,
+  .stakeholder-grid,
+  .timing-grid,
+  .vault-notes,
   .upload-queue,
   .twin-board,
   .privacy-grid {

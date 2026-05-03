@@ -12,6 +12,7 @@ The goal is to give the secretary and committee a working interface they can ins
 - Committee meeting flow based on the supplied meeting chart.
 - AGM roadmap page using the supplied roadmap visual.
 - Field Ops visualisations for solunar/tide planning, tide shape, weather gauges, touchable Moreton Bay map zones, media queues and future digital-twin layers.
+- Google Drive, Sheets and Gmail data hub concept for stakeholder routing.
 - Product data scaffold in `data/stripe-products.json`.
 
 ## Pages
@@ -20,6 +21,7 @@ The goal is to give the secretary and committee a working interface they can ins
 - `commerce.html` - Stripe-ready memberships, competition fees, fundraisers and merchandise.
 - `processes.html` - membership and committee meeting process flows.
 - `field-ops.html` - visual field-ops board for latest tide, solunar, weather, GPS, upload and digital-twin snapshots.
+- `data-hub.html` - Google Drive / Sheets / Gmail data architecture for stakeholder routing.
 - `roadmap.html` - AGM roadmap and next actions.
 - `docs/stripe-commerce-plan.md` - plain-English Stripe setup plan.
 - `docs/field-data-contract.md` - JSON handoff contract for a future agent stream or cron job.
@@ -59,6 +61,19 @@ data/latest-field-data.json
 ```
 
 That file can later be updated by a separate agent stream, cron job or backend. Keep precise GPS, private member data, emergency contacts and private media URLs out of any public JSON file.
+
+## Google Drive Data Layer
+
+The prototype assumes the club Google account can become the private operations vault.
+
+Do not hard-code the club email address into public repo files unless the committee explicitly approves it.
+
+Suggested private storage pattern:
+
+- Drive folders for raw files, uploads, minutes, finance exports and media.
+- Sheets for member ledgers, competition records, permissions, payments and action registers.
+- Gmail labels for inbound requests and outbound confirmation trails.
+- Public-safe JSON exports for the GitHub Pages website.
 
 ## Running Locally
 
