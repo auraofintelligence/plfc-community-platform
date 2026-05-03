@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exploratory open-source website prototype for Point Lookout Fishing Club, built around member journeys, committee flows, AGM data and Stripe-ready commerce pathways.">
+    <meta property="og:title" content="Point Lookout Fishing Club Community Platform">
+    <meta property="og:description" content="A daylight ocean and island governance prototype for membership, competitions, meetings, fundraising and community growth.">
+    <meta property="og:image" content="assets/club-competition-morning.webp">
+    <title>Point Lookout Fishing Club | Community Platform Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Point Lookout Fishing Club home">
+          <span>Point Lookout</span>
+          <strong>Fishing Club</strong>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a aria-current="page" href="index.html">Dashboard</a>
+          <a href="commerce.html">Commerce</a>
+          <a href="processes.html">Processes</a>
+          <a href="roadmap.html">Roadmap</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/club-competition-morning.webp" alt="Point Lookout Fishing Club competition photo near the water" width="1800" height="1350">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">North Stradbroke Island / Minjerribah</p>
+          <h1 id="hero-title">Point Lookout Fishing Club</h1>
+          <p class="hero-lede">
+            A working community-platform prototype for members, competitions, meetings, fundraising, grants and secretary-led operational clarity.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="commerce.html">Review commerce paths</a>
+            <a class="button secondary" href="processes.html">Open process flows</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="Prototype commission note">
+        <div>
+          <strong>Secretary commission:</strong>
+          <span>This exploratory open-source build turns AGM material, membership flows and meeting processes into a demonstrable interface for growing with the community.</span>
+        </div>
+      </section>
+
+      <section class="section dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-heading">
+          <p class="eyebrow">Operating dashboard</p>
+          <h2 id="dashboard-title">A clearer front door, a stronger back office</h2>
+          <p>
+            The public site can stay warm and welcoming while the repo grows into a shared operational system: members, events, renewals, meeting records, grants, sponsors and data checks.
+          </p>
+        </div>
+
+        <div class="metric-strip" aria-label="Prototype summary metrics">
+          <article>
+            <span>7</span>
+            <p>current shop products mapped</p>
+          </article>
+          <article>
+            <span>2</span>
+            <p>core process flows translated</p>
+          </article>
+          <article>
+            <span>4</span>
+            <p>website views drafted</p>
+          </article>
+          <article>
+            <span>2026</span>
+            <p>AGM reset direction captured</p>
+          </article>
+        </div>
+
+        <div class="view-tabs" role="tablist" aria-label="Prototype views">
+          <button id="tab-public" class="is-active" type="button" role="tab" aria-selected="true" aria-controls="view-public" data-view-tab="public">Public</button>
+          <button id="tab-members" type="button" role="tab" aria-selected="false" aria-controls="view-members" data-view-tab="members">Members</button>
+          <button id="tab-committee" type="button" role="tab" aria-selected="false" aria-controls="view-committee" data-view-tab="committee">Committee</button>
+          <button id="tab-commerce" type="button" role="tab" aria-selected="false" aria-controls="view-commerce" data-view-tab="commerce">Commerce</button>
+        </div>
+
+        <div class="prototype-panels">
+          <section id="view-public" class="prototype-panel" role="tabpanel" aria-labelledby="tab-public" data-view-panel="public">
+            <div>
+              <p class="eyebrow">Public doorway</p>
+              <h3>Fishing, conservation, island community and events</h3>
+              <p>
+                The current WordPress site already carries a friendly welcome. This prototype keeps that heart and adds clearer pathways for membership, competitions, volunteer work, grants and sponsor support.
+              </p>
+            </div>
+            <ul class="signal-list">
+              <li>Join the club or choose a casual comp pathway.</li>
+              <li>See what the club does before filling in a form.</li>
+              <li>Find meetings, working bees, newsletters and event notices.</li>
+            </ul>
+          </section>
+
+          <section id="view-members" class="prototype-panel" role="tabpanel" aria-labelledby="tab-members" data-view-panel="members" hidden>
+            <div>
+              <p class="eyebrow">Member journey</p>
+              <h3>Registration, payment, profile, renewal and notices</h3>
+              <p>
+                The membership flow chart becomes a website journey: collect the right details once, take payment clearly, trigger the correct pack, and prepare renewals without manual chasing.
+              </p>
+            </div>
+            <ul class="signal-list">
+              <li>Adult, cadet, junior, social and casual comp pathways.</li>
+              <li>Email and SMS readiness for renewals, birthday offers and meeting notices.</li>
+              <li>Preferences for newsletters, volunteering and working bees.</li>
+            </ul>
+          </section>
+
+          <section id="view-committee" class="prototype-panel" role="tabpanel" aria-labelledby="tab-committee" data-view-panel="committee" hidden>
+            <div>
+              <p class="eyebrow">Committee rhythm</p>
+              <h3>Agenda, recording, minutes, actions and next meeting</h3>
+              <p>
+                The meeting flow becomes a repeatable secretary system: prepare the agenda, remind people, record decisions, assign responsibility and carry actions into the next meeting.
+              </p>
+            </div>
+            <ul class="signal-list">
+              <li>Agenda intake and previous minutes review.</li>
+              <li>Quorum, reports, motions, decisions and action items.</li>
+              <li>Shared calendar, task register and meeting pack path.</li>
+            </ul>
+          </section>
+
+          <section id="view-commerce" class="prototype-panel" role="tabpanel" aria-labelledby="tab-commerce" data-view-panel="commerce" hidden>
+            <div>
+              <p class="eyebrow">Stripe-ready commerce</p>
+              <h3>Memberships, comp fees, fundraisers and merch</h3>
+              <p>
+                The first commerce layer is intentionally simple: prepare clear products and Payment Link placeholders now, then add Checkout Sessions when forms and member records are ready.
+              </p>
+            </div>
+            <ul class="signal-list">
+              <li>Membership and casual competition products mapped from the current shop.</li>
+              <li>Fundraising and merchandise pages ready for Stripe Prices.</li>
+              <li>Renewals can grow into Billing subscriptions if the club wants automatic annual renewal.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="section split-section pale" aria-labelledby="member-title">
+        <div class="split-copy">
+          <p class="eyebrow">Membership</p>
+          <h2 id="member-title">Turn the member flow into a calm, trackable journey</h2>
+          <p>
+            Members should not need to understand the back-office machinery. They choose a pathway, pay, receive the right pack and get useful notices without being spammed.
+          </p>
+          <div class="inline-actions">
+            <a class="button primary" href="commerce.html#memberships">Membership catalogue</a>
+            <a class="button secondary" href="processes.html#membership-flow">Membership flow</a>
+          </div>
+        </div>
+        <div class="journey-steps" aria-label="Member journey summary">
+          <article>
+            <span>01</span>
+            <h3>Register</h3>
+            <p>Name, contact details, date of birth, membership type and communication preferences.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Pay</h3>
+            <p>Stripe Payment Link first, Checkout Session later when the member form becomes dynamic.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Activate</h3>
+            <p>Member pack, newsletter preference, competition eligibility and working bee invitations.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Renew</h3>
+            <p>Renewal email and SMS reminders, lapse window and number reallocation rules.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section commerce-preview" aria-labelledby="commerce-title">
+        <div class="section-heading">
+          <p class="eyebrow">Commerce structure</p>
+          <h2 id="commerce-title">Fee products are ready to become Stripe items</h2>
+          <p>
+            These are scaffolded as prototype products only. No live payment is connected in this repo.
+          </p>
+        </div>
+        <div class="price-grid">
+          <article class="price-item">
+            <p class="category">Membership</p>
+            <h3>Adult Annual Membership</h3>
+            <p class="price">$75 AUD</p>
+            <p>Full annual member pathway with meeting, voting and competition eligibility to confirm against club rules.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Adult Annual Membership" data-price="$75 AUD" data-mode="Payment Link or Checkout Session" data-note="Map to a one-time Stripe Price first. Add Billing later only if annual auto-renewal is approved.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Competition</p>
+            <h3>1-Comp Casual Membership</h3>
+            <p class="price">$25 AUD</p>
+            <p>A lightweight pathway for one competition, useful for visitors and try-before-joining moments.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="1-Comp Casual Membership" data-price="$25 AUD" data-mode="Payment Link" data-note="Good first Stripe Payment Link candidate because it is simple and low-friction.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Fundraiser</p>
+            <h3>Junior Fishing Education Sponsor</h3>
+            <p class="price">TBC</p>
+            <p>A sponsor or donation product for junior education, workshops, safety gear and community outcomes.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Junior Fishing Education Sponsor" data-price="Amount TBC" data-mode="Payment Link with adjustable donation option" data-note="Can start as fixed tiers, then become a donation-style Checkout Session when backend support is added.">Prepare Stripe item</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" aria-labelledby="meetings-title">
+        <figure class="image-panel">
+          <img src="assets/club-wrap-up.webp" alt="Point Lookout Fishing Club wrap-up visual" width="1131" height="1600" loading="lazy">
+        </figure>
+        <div class="split-copy">
+          <p class="eyebrow">Committee flow</p>
+          <h2 id="meetings-title">Make every meeting feed the next one</h2>
+          <p>
+            The secretary process can become the site spine: agenda items come in, reports are recorded, decisions become action items, and the next meeting starts from clean context.
+          </p>
+          <ul class="check-list">
+            <li>Meeting preparation and reminders.</li>
+            <li>Officer reports, motions, decisions and responsibilities.</li>
+            <li>Minutes, action register and shared calendar readiness.</li>
+          </ul>
+          <div class="inline-actions">
+            <a class="button primary" href="processes.html#meeting-flow">Committee flow</a>
+            <a class="button secondary" href="roadmap.html">AGM roadmap</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section evidence-band" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <p class="eyebrow">Source material</p>
+          <h2 id="evidence-title">Built from the club material already on the table</h2>
+        </div>
+        <div class="evidence-grid">
+          <article>
+            <h3>Current public site</h3>
+            <p>Welcome copy, member promise, meeting place, social links, ABN and the existing WooCommerce shop shape.</p>
+          </article>
+          <article>
+            <h3>AGM dashboard</h3>
+            <p>Timeline, vision progress, reach, systems built, shortcomings, grant readiness and next-step readiness.</p>
+          </article>
+          <article>
+            <h3>Uploaded process charts</h3>
+            <p>Membership registration, payment, renewal, communications, committee meeting preparation and action flow.</p>
+          </article>
+          <article>
+            <h3>Stripe plugin guidance</h3>
+            <p>Payment Links first for simple products, Checkout Sessions for web app checkout, Billing only for approved recurring renewals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Next working session</p>
+          <h2 id="contact-title">From prototype to committee demonstration</h2>
+          <p>
+            The next useful pass is to replace placeholder copy with approved club wording, decide what can be public, and choose which Stripe items should go live first.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="roadmap.html#next-actions">View next actions</a>
+          <a class="button secondary" href="https://pointlookoutfishingclub.com" target="_blank" rel="noopener noreferrer">Current club site</a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="commerce-dialog" id="commerce-dialog" aria-labelledby="commerce-dialog-title">
+      <form method="dialog" class="dialog-panel">
+        <button class="dialog-close" value="close" aria-label="Close commerce setup note">x</button>
+        <p class="eyebrow">Stripe setup note</p>
+        <h2 id="commerce-dialog-title">Product</h2>
+        <p class="dialog-price" id="commerce-dialog-price"></p>
+        <p id="commerce-dialog-mode"></p>
+        <p id="commerce-dialog-note"></p>
+        <div class="inline-actions">
+          <a class="button primary" href="commerce.html">Open commerce page</a>
+          <button class="button secondary" type="button" data-copy-commerce>Copy setup note</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <p>Point Lookout Fishing Club community platform prototype.</p>
+      <p>Open-source code scaffold for secretary-led exploration. Payments are not live.</p>
+    </footer>
+
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="script.js"></script>
+  </body>
+</html>

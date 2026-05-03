@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Stripe-ready commerce scaffold for Point Lookout Fishing Club memberships, competition fees, fundraisers and merchandise.">
+    <title>Commerce | Point Lookout Fishing Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Point Lookout Fishing Club home">
+          <span>Point Lookout</span>
+          <strong>Fishing Club</strong>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Dashboard</a>
+          <a aria-current="page" href="commerce.html">Commerce</a>
+          <a href="processes.html">Processes</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero commerce-hero" aria-labelledby="commerce-title">
+        <div>
+          <p class="eyebrow">Stripe-ready, not live</p>
+          <h1 id="commerce-title">Memberships, comp fees, fundraisers and merch</h1>
+          <p>
+            This page prepares the commercial structure without taking payments. Each item can later connect to a Stripe Payment Link, Checkout Session, or Billing flow after committee approval.
+          </p>
+        </div>
+      </section>
+
+      <section class="section commerce-method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">Payment architecture</p>
+          <h2 id="method-title">Start simple, grow carefully</h2>
+          <p>
+            The safest first step is Payment Links for clear one-off products. Checkout Sessions come next when the site has forms and member records. Billing is only needed if the club approves automatic recurring renewals.
+          </p>
+        </div>
+        <div class="method-grid">
+          <article>
+            <span>01</span>
+            <h3>Payment Links</h3>
+            <p>Best for simple memberships, casual comp fees, donation tiers and merch pre-orders.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Checkout Sessions</h3>
+            <p>Best when the site needs to create checkout from a form and pass member metadata into Stripe.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Billing</h3>
+            <p>Best for true subscriptions, renewal retries and self-service payment updates through the customer portal.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pale" id="memberships" aria-labelledby="memberships-title">
+        <div class="section-heading">
+          <p class="eyebrow">Membership products</p>
+          <h2 id="memberships-title">Current fee structure mapped for Stripe setup</h2>
+          <p>
+            Prices here mirror the currently discoverable shop products and should be checked by the committee before any live link is published.
+          </p>
+        </div>
+        <div class="catalogue-grid">
+          <article class="price-item">
+            <p class="category">Annual</p>
+            <h3>Adult Annual Membership</h3>
+            <p class="price">$75 AUD</p>
+            <p>Full adult member pathway.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Adult Annual Membership" data-price="$75 AUD" data-mode="Payment Link now, Checkout Session later" data-note="Create a Stripe Product and one AUD Price. Add member type metadata: adult_annual.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Annual</p>
+            <h3>Cadet Annual Membership</h3>
+            <p class="price">$50 AUD</p>
+            <p>Cadet pathway for eligible young members.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Cadet Annual Membership" data-price="$50 AUD" data-mode="Payment Link now, Checkout Session later" data-note="Create a Stripe Product and one AUD Price. Add member type metadata: cadet_annual.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Annual</p>
+            <h3>Junior Annual Membership</h3>
+            <p class="price">$30 AUD</p>
+            <p>Junior pathway for children aged 12 and under, pending current rules check.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Junior Annual Membership" data-price="$30 AUD" data-mode="Payment Link now, Checkout Session later" data-note="Create a Stripe Product and one AUD Price. Add member type metadata: junior_annual.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Social</p>
+            <h3>Annual Social Membership</h3>
+            <p class="price">$20 AUD</p>
+            <p>Social member pathway and newsletter preference route.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Annual Social Membership" data-price="$20 AUD" data-mode="Payment Link" data-note="Good first Payment Link item. Add member type metadata: social_annual.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Competition</p>
+            <h3>1-Comp Casual Membership</h3>
+            <p class="price">$25 AUD</p>
+            <p>One competition pathway for casual participants.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="1-Comp Casual Membership" data-price="$25 AUD" data-mode="Payment Link" data-note="Keep this low-friction. Metadata: casual_comp, comp_id when available.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Supporter</p>
+            <h3>Legendary Lifetime Member</h3>
+            <p class="price">$1,000 or $5,000 AUD</p>
+            <p>High-support membership or sponsor pathway that needs careful public wording.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Legendary Lifetime Member" data-price="$1,000 or $5,000 AUD" data-mode="Payment Link with committee-approved copy" data-note="Use two separate Stripe Prices. Confirm benefits, tax treatment and public recognition wording before launch.">Prepare Stripe item</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="competitions" aria-labelledby="competitions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Competition fees</p>
+          <h2 id="competitions-title">Event checkout can carry useful metadata</h2>
+          <p>
+            Competition pages should record the event name, participant type, member status, mobile number and emergency-contact needs before payment.
+          </p>
+        </div>
+        <div class="flow-columns">
+          <article>
+            <h3>Simple version</h3>
+            <p>One Payment Link per competition, with the member entering required details in Stripe custom fields where possible.</p>
+          </article>
+          <article>
+            <h3>Better version</h3>
+            <p>Website form first, Checkout Session second, then confirmation email and committee export.</p>
+          </article>
+          <article>
+            <h3>Future version</h3>
+            <p>Member profile, comp history, waiver status, prize categories and automated wrap-up reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pale" id="fundraisers" aria-labelledby="fundraisers-title">
+        <div class="section-heading">
+          <p class="eyebrow">Fundraisers</p>
+          <h2 id="fundraisers-title">Donation and sponsor products ready for shaping</h2>
+          <p>
+            These placeholders keep community intent visible while leaving the exact amounts, benefits and public recognition rules for committee approval.
+          </p>
+        </div>
+        <div class="catalogue-grid">
+          <article class="price-item">
+            <p class="category">Education</p>
+            <h3>Junior Fishing Education Sponsor</h3>
+            <p class="price">TBC</p>
+            <p>Support workshops, safety sessions and junior participation.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Junior Fishing Education Sponsor" data-price="Amount TBC" data-mode="Payment Link tiers" data-note="Consider $50, $100 and $250 tiers once the committee approves the campaign.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Conservation</p>
+            <h3>Working Bee Support</h3>
+            <p class="price">TBC</p>
+            <p>Support clean-ups, conservation activity and volunteer materials.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Working Bee Support" data-price="Amount TBC" data-mode="Payment Link or donation checkout" data-note="Use campaign metadata so funds can be reported clearly.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Grants</p>
+            <h3>Grant Co-Funding Pool</h3>
+            <p class="price">TBC</p>
+            <p>Collect matched support for grant applications and public-good projects.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Grant Co-Funding Pool" data-price="Amount TBC" data-mode="Donation checkout with reporting metadata" data-note="Needs careful accounting and transparent public reporting before launch.">Prepare Stripe item</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="merch" aria-labelledby="merch-title">
+        <div class="section-heading">
+          <p class="eyebrow">Merchandise</p>
+          <h2 id="merch-title">Merch pages can start as pre-order products</h2>
+          <p>
+            Keep inventory simple at first. Use one product per item, size or colour options only where they genuinely matter, and avoid collecting card details on the website itself.
+          </p>
+        </div>
+        <div class="catalogue-grid">
+          <article class="price-item">
+            <p class="category">Merch</p>
+            <h3>Club Hat</h3>
+            <p class="price">TBC</p>
+            <p>Pre-order style product with pickup location and size notes if needed.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Club Hat" data-price="Amount TBC" data-mode="Payment Link with shipping or pickup setting" data-note="Confirm inventory, fulfilment and pickup wording before publishing.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Merch</p>
+            <h3>Fishing Shirt</h3>
+            <p class="price">TBC</p>
+            <p>Size-based merch pathway with sponsor or comp design options later.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Fishing Shirt" data-price="Amount TBC" data-mode="Checkout Session when size options matter" data-note="Use Checkout Sessions if sizes and custom fields become awkward in a Payment Link.">Prepare Stripe item</button>
+          </article>
+          <article class="price-item">
+            <p class="category">Merch</p>
+            <h3>Supporter Pack</h3>
+            <p class="price">TBC</p>
+            <p>Small supporter product for stickers, newsletters or club-support bundles.</p>
+            <button class="text-button" type="button" data-commerce-open data-product="Supporter Pack" data-price="Amount TBC" data-mode="Payment Link" data-note="A simple first merch item if fulfilment is easy.">Prepare Stripe item</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section evidence-band" aria-labelledby="checkout-title">
+        <div class="section-heading">
+          <p class="eyebrow">Checkout safety</p>
+          <h2 id="checkout-title">What must be true before payments go live</h2>
+        </div>
+        <div class="evidence-grid">
+          <article>
+            <h3>Approved prices</h3>
+            <p>Committee confirms every fee, benefit, refund rule and public description.</p>
+          </article>
+          <article>
+            <h3>Stripe account access</h3>
+            <p>The club decides who owns the Stripe account, who can administer it and where funds settle.</p>
+          </article>
+          <article>
+            <h3>Privacy wording</h3>
+            <p>Member data, emergency contact data, newsletter consent and SMS consent are explained before collection.</p>
+          </article>
+          <article>
+            <h3>Reconciliation</h3>
+            <p>Payments can be matched to member records, competition entries, fundraiser campaigns and bank deposits.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="commerce-dialog" id="commerce-dialog" aria-labelledby="commerce-dialog-title">
+      <form method="dialog" class="dialog-panel">
+        <button class="dialog-close" value="close" aria-label="Close commerce setup note">x</button>
+        <p class="eyebrow">Stripe setup note</p>
+        <h2 id="commerce-dialog-title">Product</h2>
+        <p class="dialog-price" id="commerce-dialog-price"></p>
+        <p id="commerce-dialog-mode"></p>
+        <p id="commerce-dialog-note"></p>
+        <div class="inline-actions">
+          <a class="button primary" href="data/stripe-products.json">Open product data</a>
+          <button class="button secondary" type="button" data-copy-commerce>Copy setup note</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer">
+      <p>Point Lookout Fishing Club community platform prototype.</p>
+      <p>Payments are prepared as structure only. No live checkout is connected.</p>
+    </footer>
+
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="script.js"></script>
+  </body>
+</html>

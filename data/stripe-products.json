@@ -1,0 +1,158 @@
+{
+  "currency": "aud",
+  "stripeApiVersion": "2026-02-25.clover",
+  "status": "prototype_only_not_live",
+  "recommendedOrder": [
+    "Payment Links for simple one-time products",
+    "Checkout Sessions when the website needs to pass form data and metadata",
+    "Billing subscriptions only if automatic annual renewal is approved"
+  ],
+  "products": [
+    {
+      "id": "adult_annual_membership",
+      "name": "Adult Annual Membership",
+      "category": "membership",
+      "amountCents": 7500,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "futureStripeSurface": "checkout_session",
+      "metadata": {
+        "member_type": "adult_annual"
+      }
+    },
+    {
+      "id": "cadet_annual_membership",
+      "name": "Cadet Annual Membership",
+      "category": "membership",
+      "amountCents": 5000,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "futureStripeSurface": "checkout_session",
+      "metadata": {
+        "member_type": "cadet_annual"
+      }
+    },
+    {
+      "id": "junior_annual_membership",
+      "name": "Junior Annual Membership",
+      "category": "membership",
+      "amountCents": 3000,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "futureStripeSurface": "checkout_session",
+      "metadata": {
+        "member_type": "junior_annual"
+      }
+    },
+    {
+      "id": "annual_social_membership",
+      "name": "Annual Social Membership",
+      "category": "membership",
+      "amountCents": 2000,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "member_type": "social_annual"
+      }
+    },
+    {
+      "id": "one_comp_casual_membership",
+      "name": "1-Comp Casual Membership",
+      "category": "competition",
+      "amountCents": 2500,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "member_type": "casual_comp"
+      }
+    },
+    {
+      "id": "legendary_lifetime_member_1000",
+      "name": "Legendary Lifetime Member (1000)",
+      "category": "supporter",
+      "amountCents": 100000,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "supporter_tier": "legendary_1000"
+      }
+    },
+    {
+      "id": "legendary_lifetime_member_5000",
+      "name": "Legendary Lifetime Member (5000)",
+      "category": "supporter",
+      "amountCents": 500000,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "supporter_tier": "legendary_5000"
+      }
+    },
+    {
+      "id": "junior_fishing_education_sponsor",
+      "name": "Junior Fishing Education Sponsor",
+      "category": "fundraiser",
+      "amountCents": null,
+      "paymentMode": "one_time_or_donation",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "campaign": "junior_education"
+      }
+    },
+    {
+      "id": "working_bee_support",
+      "name": "Working Bee Support",
+      "category": "fundraiser",
+      "amountCents": null,
+      "paymentMode": "one_time_or_donation",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "campaign": "working_bee"
+      }
+    },
+    {
+      "id": "grant_co_funding_pool",
+      "name": "Grant Co-Funding Pool",
+      "category": "fundraiser",
+      "amountCents": null,
+      "paymentMode": "one_time_or_donation",
+      "firstStripeSurface": "checkout_session",
+      "metadata": {
+        "campaign": "grant_co_funding"
+      }
+    },
+    {
+      "id": "club_hat",
+      "name": "Club Hat",
+      "category": "merch",
+      "amountCents": null,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "fulfilment": "pickup_or_shipping_tbc"
+      }
+    },
+    {
+      "id": "fishing_shirt",
+      "name": "Fishing Shirt",
+      "category": "merch",
+      "amountCents": null,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "checkout_session",
+      "metadata": {
+        "requires_size": "true"
+      }
+    },
+    {
+      "id": "supporter_pack",
+      "name": "Supporter Pack",
+      "category": "merch",
+      "amountCents": null,
+      "paymentMode": "one_time",
+      "firstStripeSurface": "payment_link",
+      "metadata": {
+        "fulfilment": "tbc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AGM roadmap and next actions for the Point Lookout Fishing Club community platform prototype.">
+    <title>Roadmap | Point Lookout Fishing Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Point Lookout Fishing Club home">
+          <span>Point Lookout</span>
+          <strong>Fishing Club</strong>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Dashboard</a>
+          <a href="commerce.html">Commerce</a>
+          <a href="processes.html">Processes</a>
+          <a aria-current="page" href="roadmap.html">Roadmap</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero roadmap-hero" aria-labelledby="roadmap-title">
+        <div>
+          <p class="eyebrow">AGM reset</p>
+          <h1 id="roadmap-title">Roadmap for a stronger community interface</h1>
+          <p>
+            The roadmap view keeps the website connected to governance, grant readiness, participation data and the practical work of running the club.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="roadmap-image-title">
+        <div class="section-heading">
+          <p class="eyebrow">Visual roadmap</p>
+          <h2 id="roadmap-image-title">The AGM story becomes a public build path</h2>
+          <p>
+            This image is kept as source evidence. The website then converts it into clearer sections, public-facing calls to action and committee-ready next steps.
+          </p>
+        </div>
+        <figure class="wide-evidence">
+          <img src="assets/agm-roadmap.webp" alt="Point Lookout Fishing Club AGM roadmap visual" width="1900" height="1060" loading="lazy">
+          <figcaption>Uploaded AGM roadmap converted into a web-ready asset.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section pale" aria-labelledby="pillars-title">
+        <div class="section-heading">
+          <p class="eyebrow">Build pillars</p>
+          <h2 id="pillars-title">Four practical lanes for the next version</h2>
+        </div>
+        <div class="pillar-grid">
+          <article>
+            <span>01</span>
+            <h3>Public trust</h3>
+            <p>Clear club story, events, conservation intent, meeting place, ABN and social links.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Member operations</h3>
+            <p>Forms, member type routing, payments, communications, renewals and member pack delivery.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Committee memory</h3>
+            <p>Agenda, minutes, action items, officer reports, calendar and responsibility tracking.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Grant readiness</h3>
+            <p>Evidence of reach, participation, volunteer effort, events, outcomes and future needs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="next-actions" aria-labelledby="next-title">
+        <div class="section-heading">
+          <p class="eyebrow">Next actions</p>
+          <h2 id="next-title">A sensible sequence from prototype to demonstration</h2>
+          <p>
+            Each step is small enough to explain, approve and improve without making the committee feel trapped by a giant tech project.
+          </p>
+        </div>
+        <ol class="action-list">
+          <li>
+            <strong>Approve the story spine.</strong>
+            Confirm the homepage language, member promise, conservation wording and community tone.
+          </li>
+          <li>
+            <strong>Confirm the fee table.</strong>
+            Verify membership, casual comp, supporter, fundraiser and merch prices before any Stripe item goes live.
+          </li>
+          <li>
+            <strong>Choose the first live payment path.</strong>
+            Start with one or two Stripe Payment Links, then add Checkout Sessions when form data needs to be passed through.
+          </li>
+          <li>
+            <strong>Design the member form.</strong>
+            Decide required fields, optional fields, privacy wording, newsletter consent and SMS consent.
+          </li>
+          <li>
+            <strong>Pilot the meeting pack flow.</strong>
+            Use one committee meeting to test agenda intake, report capture, minutes and action tracking.
+          </li>
+          <li>
+            <strong>Publish the open-source repo.</strong>
+            Use GitHub Pages for the prototype and keep sensitive documents out of the public repo.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Point Lookout Fishing Club community platform prototype.</p>
+      <p>Roadmap content is exploratory and ready for committee review.</p>
+    </footer>
+
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="script.js"></script>
+  </body>
+</html>
