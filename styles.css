@@ -1088,8 +1088,223 @@ p {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.solunar-layout {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+}
+
+.solunar-calendar {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(7, minmax(150px, 1fr));
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.solunar-day,
+.tide-curve-panel,
+.weather-gauge {
+  background: rgba(255, 253, 247, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.solunar-day {
+  border-top: 5px solid var(--ocean);
+  min-width: 150px;
+  padding: 1rem;
+}
+
+.solunar-day[data-tone="good"] {
+  border-top-color: var(--emerald);
+}
+
+.solunar-day[data-tone="watch"] {
+  border-top-color: var(--gold);
+}
+
+.solunar-day[data-tone="caution"] {
+  border-top-color: var(--purple);
+}
+
+.solunar-day-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.solunar-day-head strong {
+  color: var(--deep-ocean);
+  display: block;
+  font-family: var(--heading);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.solunar-day-head span {
+  color: var(--titanium);
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.moon-disc {
+  aspect-ratio: 1;
+  border: 1px solid rgba(7, 68, 95, 0.18);
+  border-radius: 999px;
+  box-shadow: inset 0 0 12px rgba(7, 68, 95, 0.2);
+  flex: 0 0 42px;
+}
+
+.moon-phase {
+  color: var(--titanium);
+  font-size: 0.94rem;
+  margin-top: 0.8rem;
+}
+
+.bite-rating {
+  display: flex;
+  gap: 0.28rem;
+  margin-top: 0.8rem;
+}
+
+.bite-rating span {
+  aspect-ratio: 1;
+  background: rgba(7, 68, 95, 0.15);
+  border-radius: 999px;
+  display: block;
+  width: 0.72rem;
+}
+
+.bite-rating span.is-filled {
+  background: var(--gold);
+}
+
+.solunar-meta {
+  display: grid;
+  gap: 0.35rem 0.65rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin: 1rem 0 0;
+}
+
+.solunar-meta dt {
+  color: var(--deep-ocean);
+  font-family: var(--heading);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.solunar-meta dd {
+  color: var(--titanium);
+  margin: 0;
+}
+
+.tide-curve-panel {
+  display: grid;
+  grid-template-rows: auto minmax(280px, 1fr);
+  padding: 1rem;
+}
+
+.panel-heading h3 {
+  margin-top: 0;
+}
+
+.tide-curve {
+  align-items: end;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(6, minmax(42px, 1fr));
+  min-height: 280px;
+  padding-top: 1rem;
+}
+
+.tide-point {
+  align-items: center;
+  display: grid;
+  gap: 0.35rem;
+  grid-template-rows: 1fr auto auto auto;
+  height: 100%;
+  text-align: center;
+}
+
+.tide-bar {
+  align-self: end;
+  background:
+    linear-gradient(180deg, rgba(143, 216, 238, 0.9), rgba(4, 127, 168, 0.95));
+  border-radius: 8px 8px 3px 3px;
+  min-height: 22px;
+  width: 100%;
+}
+
+.tide-point strong {
+  color: var(--deep-ocean);
+  font-family: var(--heading);
+  font-size: 0.95rem;
+}
+
+.tide-point span,
+.tide-point p {
+  color: var(--titanium);
+  font-size: 0.84rem;
+  margin: 0;
+}
+
 .monitor-board {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.weather-console {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.weather-gauge {
+  border-top: 5px solid var(--ocean);
+  padding: 1.15rem;
+}
+
+.weather-gauge[data-tone="good"] {
+  border-top-color: var(--emerald);
+}
+
+.weather-gauge[data-tone="watch"] {
+  border-top-color: var(--gold);
+}
+
+.weather-gauge[data-tone="caution"] {
+  border-top-color: var(--purple);
+}
+
+.weather-gauge h3 {
+  color: var(--deep-ocean);
+  font-size: 2rem;
+  margin-top: 0.25rem;
+}
+
+.weather-meter {
+  background: rgba(7, 68, 95, 0.12);
+  border-radius: 999px;
+  height: 14px;
+  margin-top: 0.9rem;
+  overflow: hidden;
+}
+
+.weather-meter span {
+  background: linear-gradient(90deg, var(--emerald), var(--gold));
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+}
+
+.weather-gauge p:not(.category) {
+  color: var(--titanium);
+  margin-top: 0.65rem;
 }
 
 .upload-story {
@@ -1144,13 +1359,15 @@ p {
 @media (max-width: 980px) {
   .field-live-header,
   .condition-story,
-  .upload-story {
+  .upload-story,
+  .solunar-layout {
     grid-template-columns: 1fr;
   }
 
   .field-kpis,
   .time-ribbon,
   .monitor-board,
+  .weather-console,
   .upload-queue,
   .twin-board,
   .privacy-grid {
@@ -1169,6 +1386,7 @@ p {
   .field-kpis,
   .time-ribbon,
   .monitor-board,
+  .weather-console,
   .upload-queue,
   .twin-board,
   .privacy-grid {

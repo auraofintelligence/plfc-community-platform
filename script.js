@@ -121,6 +121,9 @@ const fallbackFieldData = {
     featureTitle: "Story bundle pending",
     featureBody: "Uploads can become public wrap-ups, committee records or grant-ready evidence."
   },
+  solunarCalendar: [],
+  tideCurve: [],
+  weatherVisuals: [],
   windows: [],
   monitors: [],
   mediaItems: [],
@@ -162,6 +165,132 @@ function renderSimpleCards(target, items, className) {
   });
 }
 
+function renderSolunarCalendar(target, days) {
+  if (!target) return;
+  target.replaceChildren();
+
+  days.forEach((day) => {
+    const card = document.createElement("article");
+    card.className = "solunar-day";
+    card.dataset.tone = String(day.weatherTone || "neutral").toLowerCase();
+
+    const moonPercent = Math.max(0, Math.min(100, Number(day.moonPercent) || 0));
+    const rating = Math.max(0, Math.min(5, Number(day.rating) || 0));
+
+    const head = document.createElement("div");
+    head.className = "solunar-day-head";
+
+    const date = document.createElement("div");
+    const dayLabel = document.createElement("strong");
+    dayLabel.textContent = day.day || "Day";
+    const dateLabel = document.createElement("span");
+    dateLabel.textContent = day.date || "Date";
+    date.append(dayLabel, dateLabel);
+
+    const moon = document.createElement("div");
+    moon.className = "moon-disc";
+    moon.style.background = `linear-gradient(90deg, #fff9d8 ${moonPercent}%, rgba(7, 68, 95, 0.2) ${moonPercent}%)`;
+    moon.setAttribute("aria-label", `${day.moonPhase || "Moon phase"} ${moonPercent}%`);
+
+    head.append(date, moon);
+
+    const phase = document.createElement("p");
+    phase.className = "moon-phase";
+    phase.textContent = day.moonPhase || "Moon phase pending";
+
+    const stars = document.createElement("div");
+    stars.className = "bite-rating";
+    stars.setAttribute("aria-label", `Solunar rating ${rating} out of 5`);
+    for (let index = 1; index <= 5; index += 1) {
+      const dot = document.createElement("span");
+      dot.className = index <= rating ? "is-filled" : "";
+      stars.appendChild(dot);
+    }
+
+    const meta = document.createElement("dl");
+    meta.className = "solunar-meta";
+    [
+      ["Major", day.majorWindow],
+      ["Minor", day.minorWindow],
+      ["High", day.highTide],
+      ["Low", day.lowTide],
+      ["Tide", day.tideState]
+    ].forEach(([label, value]) => {
+      const dt = document.createElement("dt");
+      dt.textContent = label;
+      const dd = document.createElement("dd");
+      dd.textContent = value || "Pending";
+      meta.append(dt, dd);
+    });
+
+    card.append(head, phase, stars, meta);
+    target.appendChild(card);
+  });
+}
+
+function renderTideCurve(target, points) {
+  if (!target) return;
+  target.replaceChildren();
+
+  const maxHeight = Math.max(...points.map((point) => Number(point.height) || 0), 1);
+  points.forEach((point) => {
+    const item = document.createElement("article");
+    item.className = "tide-point";
+    const height = Number(point.height) || 0;
+    const percent = Math.max(8, Math.round((height / maxHeight) * 100));
+
+    const bar = document.createElement("div");
+    bar.className = "tide-bar";
+    bar.style.height = `${percent}%`;
+
+    const value = document.createElement("strong");
+    value.textContent = `${height.toFixed(1)} m`;
+
+    const time = document.createElement("span");
+    time.textContent = point.time || "--";
+
+    const label = document.createElement("p");
+    label.textContent = point.label || "Tide point";
+
+    item.append(bar, value, time, label);
+    target.appendChild(item);
+  });
+}
+
+function renderWeatherVisuals(target, items) {
+  if (!target) return;
+  target.replaceChildren();
+
+  items.forEach((item) => {
+    const card = document.createElement("article");
+    card.className = "weather-gauge";
+    card.dataset.tone = item.tone || "neutral";
+
+    const value = Number(item.value) || 0;
+    const max = Math.max(Number(item.max) || 1, value, 1);
+    const percent = Math.max(0, Math.min(100, Math.round((value / max) * 100)));
+
+    const label = document.createElement("p");
+    label.className = "category";
+    label.textContent = item.label || "Monitor";
+
+    const readout = document.createElement("h3");
+    readout.textContent = `${item.value ?? "--"} ${item.unit || ""}`.trim();
+
+    const meter = document.createElement("div");
+    meter.className = "weather-meter";
+    const fill = document.createElement("span");
+    fill.style.width = `${percent}%`;
+    meter.appendChild(fill);
+
+    const detail = document.createElement("p");
+    detail.textContent = item.detail || "Latest supplied point.";
+
+    card.append(label, readout, meter, detail);
+    target.appendChild(card);
+  });
+}
+
 function renderFieldData(data) {
   document.querySelectorAll("[data-field]").forEach((node) => {
     const path = node.getAttribute("data-field");
@@ -175,6 +304,9 @@ function renderFieldData(data) {
   renderSimpleCards(document.querySelector("[data-monitor-list]"), data.monitors || [], "monitor-card");
   renderSimpleCards(document.querySelector("[data-media-list]"), data.mediaItems || [], "media-card");
   renderSimpleCards(document.querySelector("[data-map-list]"), data.mapLayers || [], "map-card");
+  renderSolunarCalendar(document.querySelector("[data-solunar-calendar]"), data.solunarCalendar || []);
+  renderTideCurve(document.querySelector("[data-tide-curve]"), data.tideCurve || []);
+  renderWeatherVisuals(document.querySelector("[data-weather-visuals]"), data.weatherVisuals || []);
 }
 
 async function loadFieldData() {

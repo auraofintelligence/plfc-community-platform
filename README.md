@@ -11,6 +11,7 @@ The goal is to give the secretary and committee a working interface they can ins
 - Membership lifecycle flow based on the supplied flow chart.
 - Committee meeting flow based on the supplied meeting chart.
 - AGM roadmap page using the supplied roadmap visual.
+- Field Ops visualisations for solunar/tide planning, tide shape, weather gauges, media queues and future digital-twin layers.
 - Product data scaffold in `data/stripe-products.json`.
 
 ## Pages

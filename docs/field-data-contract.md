@@ -24,7 +24,10 @@ Another agent, cron job or future backend can update that file. The website then
 - `story` - headline, summary and longer readout.
 - `tide`, `weather`, `team`, `media` - top-line summary cards.
 - `windows` - time ribbon for tide, solunar, weather, event and media moments.
+- `solunarCalendar` - seven-day cards for moon phase, rating, major/minor windows and tide timing.
+- `tideCurve` - simple tide-height points for a visual bar curve.
 - `monitors` - condition tiles.
+- `weatherVisuals` - gauge-style weather readings such as wind, swell, UV and rain.
 - `mediaItems` - photo, video and note queue.
 - `mapLayers` - future digital twin layers.
 
