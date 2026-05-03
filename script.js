@@ -296,18 +296,22 @@ function renderWeatherVisuals(target, items) {
 function locationDetailMarkup(location) {
   if (!location) {
     return `
-      <p class="eyebrow">Selected zone</p>
-      <h3>Tap a map point</h3>
-      <p>Choose a broad location to view sample retroactive data, media counts, team logs and privacy status.</p>
+      <p class="eyebrow">Selected public point</p>
+      <h3>Choose a map point</h3>
+      <p>Select a PLFC public placemark to open it in the Google map and attach field story context.</p>
     `;
   }
 
+  const mapsUrl = location.lat && location.lng
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${location.lat},${location.lng}`)}`
+    : "";
+
   return `
-    <p class="eyebrow">${location.type || "Map zone"}</p>
-    <h3>${location.label || "Selected zone"}</h3>
+    <p class="eyebrow">${location.type || "Public map point"}</p>
+    <h3>${location.label || "Selected point"}</h3>
     <p>${location.latest || "Latest summary pending."}</p>
     <dl class="location-meta">
-      <dt>Zone</dt><dd>${location.zone || "Broad zone"}</dd>
+      <dt>Area</dt><dd>${location.zone || "Public access point"}</dd>
       <dt>Team</dt><dd>${location.team || "Pending"}</dd>
       <dt>Media</dt><dd>${location.media || "Pending"}</dd>
       <dt>Privacy</dt><dd>${location.privacy || "Permission pending"}</dd>
@@ -315,15 +319,28 @@ function locationDetailMarkup(location) {
     </dl>
     <p class="permission-note">${location.permission || "Do not publish sensitive location details without permission."}</p>
     <p>${location.story || ""}</p>
+    ${mapsUrl ? `<a class="map-open-link" href="${mapsUrl}" target="_blank" rel="noopener">Open in Google Maps</a>` : ""}
   `;
 }
 
-function selectLocation(location, mapTarget, listTarget, detailTarget) {
+function googleMapEmbedUrl(location) {
+  if (!location || !location.lat || !location.lng) {
+    return "https://www.google.com/maps?q=Point%20Lookout%20Queensland&z=11&output=embed";
+  }
+
+  return `https://www.google.com/maps?q=${encodeURIComponent(`${location.lat},${location.lng} (${location.label || "PLFC map point"})`)}&z=${location.zoom || 14}&output=embed`;
+}
+
+function selectLocation(location, mapTarget, listTarget, detailTarget, frameTarget) {
   if (!location || !detailTarget) return;
 
   detailTarget.innerHTML = locationDetailMarkup(location);
+  if (frameTarget) {
+    frameTarget.src = googleMapEmbedUrl(location);
+    frameTarget.title = `Google map showing ${location.label || "selected PLFC point"}`;
+  }
 
-  [mapTarget, listTarget].forEach((target) => {
+  [listTarget].forEach((target) => {
     if (!target) return;
     target.querySelectorAll("[data-location-id]").forEach((node) => {
       node.classList.toggle("is-selected", node.getAttribute("data-location-id") === location.id);
@@ -332,44 +349,36 @@ function selectLocation(location, mapTarget, listTarget, detailTarget) {
 }
 
 function renderMapLocations(data) {
-  const mapTarget = document.querySelector("[data-location-map]");
+  const mapFrame = document.querySelector("[data-google-map-frame]");
   const listTarget = document.querySelector("[data-location-list]");
   const detailTarget = document.querySelector("[data-location-detail]");
+  const sourceName = document.querySelector("[data-map-source-name]");
+  const sourceDetail = document.querySelector("[data-map-source-detail]");
   const locations = data.mapLocations || [];
 
-  if (!mapTarget || !listTarget || !detailTarget) return;
+  if (!mapFrame || !listTarget || !detailTarget) return;
 
-  mapTarget.replaceChildren();
   listTarget.replaceChildren();
+  if (sourceName) sourceName.textContent = data.mapSource?.name || "PLFC Point Lookout Fishing Club";
+  if (sourceDetail) sourceDetail.textContent = data.mapSource?.detail || "Public placemarks extracted from the supplied KMZ.";
 
   locations.forEach((location, index) => {
-    const marker = document.createElement("button");
-    marker.className = "map-marker";
-    marker.type = "button";
-    marker.dataset.locationId = location.id || `location-${index}`;
-    marker.style.left = `${Number(location.x) || 50}%`;
-    marker.style.top = `${Number(location.y) || 50}%`;
-    marker.setAttribute("aria-label", `Open ${location.label}`);
-    marker.innerHTML = `<span>${index + 1}</span>`;
-
     const card = document.createElement("button");
     card.className = "location-choice";
     card.type = "button";
-    card.dataset.locationId = marker.dataset.locationId;
+    card.dataset.locationId = location.id || `location-${index}`;
     card.innerHTML = `
       <span>${location.type || "Zone"}</span>
       <strong>${location.label || "Location"}</strong>
       <small>${location.privacy || "Privacy pending"}</small>
     `;
 
-    marker.addEventListener("click", () => selectLocation(location, mapTarget, listTarget, detailTarget));
-    card.addEventListener("click", () => selectLocation(location, mapTarget, listTarget, detailTarget));
+    card.addEventListener("click", () => selectLocation(location, null, listTarget, detailTarget, mapFrame));
 
-    mapTarget.appendChild(marker);
     listTarget.appendChild(card);
   });
 
-  selectLocation(locations[0], mapTarget, listTarget, detailTarget);
+  selectLocation(locations[0], null, listTarget, detailTarget, mapFrame);
 }
 
 function renderRoutes(target, routes) {

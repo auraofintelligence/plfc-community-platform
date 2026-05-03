@@ -27,7 +27,11 @@ The goal is to give the secretary and committee a working interface they can ins
 - `roadmap.html` - AGM roadmap and next actions.
 - `docs/stripe-commerce-plan.md` - plain-English Stripe setup plan.
 - `docs/field-data-contract.md` - JSON handoff contract for a future agent stream or cron job.
+- `docs/example-data-sets.md` - plain-English notes for the example JSON datasets.
 - `data/latest-field-data.json` - sample field snapshot used by the Field Ops page.
+- `data/example-public-map-points.json` - small public map point dataset based on the KMZ pattern.
+- `data/example-field-story-export.json` - sample after-event story/simulator export.
+- `assets/maps/plfc-point-lookout-fishing-club.kmz` - supplied PLFC KMZ source for importing into Google My Maps / Drive.
 - `data/club-journey.json` - public-safe summary layer from the wrap-up workbook.
 - `data/calendar-event-types.json` - prototype Calendar queue rules, not live calendar data.
 - `templates/PLFC Backend Starter Workbook.xlsx` - starter workbook for importing into Google Sheets.
@@ -68,6 +72,8 @@ data/latest-field-data.json
 ```
 
 That file can later be updated by a separate agent stream, cron job or backend. Keep precise GPS, private member data, emergency contacts and private media URLs out of any public JSON file.
+
+The map section uses public placemarks extracted from the supplied KMZ and opens each selected point in a Google Maps embed. The editable master map should live in the club Google Drive / My Maps account; this repo keeps a static KMZ copy and public-safe JSON fields for the website.
 
 ## Google Drive Data Layer
 

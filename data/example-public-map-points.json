@@ -1,0 +1,35 @@
+{
+  "dataset": "PLFC public map points example",
+  "source": "PLFC Point Lookout Fishing Club.kmz",
+  "privacy": "Public landmarks and access points only. Do not include private fishing spots, live team positions, member addresses or precise event tracks.",
+  "updated": "2026-05-03",
+  "points": [
+    {
+      "id": "point-lookout-bowls-club",
+      "name": "Point Lookout Bowls Club - Meeting Point Of the Fishing Club",
+      "type": "club-meeting-point",
+      "lat": -27.4274376,
+      "lng": 153.5212327,
+      "publicUse": ["member meetup", "event briefing", "community story anchor"],
+      "privateBoundary": "Do not publish attendance lists or private committee notes."
+    },
+    {
+      "id": "amity-point-boat-ramp",
+      "name": "Amity Point Boat Ramp",
+      "type": "public-access-point",
+      "lat": -27.4010402,
+      "lng": 153.4375405,
+      "publicUse": ["access explainer", "conditions context", "bay-side story"],
+      "privateBoundary": "Do not publish live launches, team routes or fishing destinations."
+    },
+    {
+      "id": "cylinder-beach",
+      "name": "Cylinder Beach",
+      "type": "public-beach-landmark",
+      "lat": -27.4258682,
+      "lng": 153.5327947,
+      "publicUse": ["family clinic", "beach safety", "visitor-friendly local context"],
+      "privateBoundary": "Children's media requires explicit approval before publication."
+    }
+  ]
+}

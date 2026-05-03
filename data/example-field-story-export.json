@@ -1,0 +1,45 @@
+{
+  "dataset": "PLFC field story export example",
+  "purpose": "Shows how approved club data can feed the public website, Ready S.E.T. Hyperlocal Media and future simulator layers.",
+  "privacy": "Public-safe sample only. Exact GPS, private member details, unapproved media and payment data are excluded.",
+  "event": {
+    "id": "plfc-comp-sample-001",
+    "name": "Sample Autumn Competition",
+    "publicDate": "2026-05-09",
+    "publicZone": "Point Lookout / broad ocean-side zone",
+    "status": "after-event reviewed"
+  },
+  "conditions": {
+    "tidePhase": "rising morning",
+    "windSignal": "ESE watch",
+    "uvSignal": "high",
+    "weatherNote": "Planning context only; official warnings stay authoritative."
+  },
+  "catchRecords": [
+    {
+      "speciesGroup": "sample reef species",
+      "lengthClass": "legal measured length",
+      "evidence": "photo on legal measuring device",
+      "keptOrReleased": "released",
+      "publicLocation": "broad zone only"
+    },
+    {
+      "speciesGroup": "sample table fish",
+      "lengthClass": "legal measured length",
+      "evidence": "photo on legal measuring device",
+      "keptOrReleased": "kept for food",
+      "publicLocation": "broad zone only"
+    }
+  ],
+  "media": {
+    "approvedPhotos": 12,
+    "pendingPhotos": 4,
+    "approvedClips": 2,
+    "captionStatus": "draft ready for secretary review"
+  },
+  "outputs": {
+    "websiteCard": "Competition wrap-up with length-photo results, tide story and sponsor thanks.",
+    "hyperlocalMedia": "Local sport, family participation and catch-and-release where chosen.",
+    "simulatorTags": ["event", "tide:rising", "wind:watch", "zone:point-lookout", "catch:length-photo"]
+  }
+}
