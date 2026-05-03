@@ -1,0 +1,147 @@
+{
+  "generatedAtLabel": "Sample payload",
+  "event": {
+    "name": "Autumn Competition Field Board",
+    "locationLabel": "Point Lookout / Minjerribah"
+  },
+  "score": {
+    "value": "74",
+    "label": "Planning signal"
+  },
+  "story": {
+    "headline": "A workable morning window with a careful weather watch",
+    "summary": "Sample data shows a readable field board: tide rising, useful solunar windows, moderate wind watch, team check-ins and a growing media queue.",
+    "longform": "This is not live weather or navigation advice. It shows how a future agent stream can turn scattered tide, solunar, weather, team and media points into a simple story the committee can review before, during and after a comp."
+  },
+  "tide": {
+    "state": "Rising tide",
+    "detail": "Next high shown as a sample planning window."
+  },
+  "weather": {
+    "headline": "Moderate watch",
+    "detail": "Wind and swell need review before final go-ahead."
+  },
+  "team": {
+    "headline": "8 checked in",
+    "detail": "3 sharing event-bound location with consent.",
+    "checkedIn": "8",
+    "sharing": "3",
+    "expiry": "15:30",
+    "visibility": "Organisers"
+  },
+  "media": {
+    "headline": "50 items",
+    "detail": "39 cleared, 11 waiting for review.",
+    "featureTitle": "Competition story bundle forming",
+    "featureBody": "Photos, short video, results and condition notes can become a public wrap-up, committee record and grant-ready evidence set."
+  },
+  "windows": [
+    {
+      "time": "05:10",
+      "label": "First light setup",
+      "type": "event",
+      "rating": "steady"
+    },
+    {
+      "time": "06:35",
+      "label": "Morning solunar lift",
+      "type": "solunar",
+      "rating": "good"
+    },
+    {
+      "time": "09:20",
+      "label": "Tide working window",
+      "type": "tide",
+      "rating": "good"
+    },
+    {
+      "time": "11:45",
+      "label": "Wind watch",
+      "type": "weather",
+      "rating": "watch"
+    },
+    {
+      "time": "13:30",
+      "label": "Media review",
+      "type": "media",
+      "rating": "steady"
+    }
+  ],
+  "monitors": [
+    {
+      "label": "Wind",
+      "value": "ESE 12 kt",
+      "detail": "Gusts marked as a watch point.",
+      "tone": "watch"
+    },
+    {
+      "label": "Swell",
+      "value": "1.2 m",
+      "detail": "Sample height for the visual tile.",
+      "tone": "steady"
+    },
+    {
+      "label": "Tide",
+      "value": "Rising",
+      "detail": "High window supplied by upstream data.",
+      "tone": "good"
+    },
+    {
+      "label": "Storm risk",
+      "value": "Low",
+      "detail": "Warnings still checked outside this prototype.",
+      "tone": "good"
+    },
+    {
+      "label": "UV",
+      "value": "High",
+      "detail": "Add shade and hydration prompts.",
+      "tone": "watch"
+    },
+    {
+      "label": "Sea temp",
+      "value": "Sample",
+      "detail": "Ready for upstream marine data.",
+      "tone": "neutral"
+    }
+  ],
+  "mediaItems": [
+    {
+      "label": "Photos",
+      "value": "43",
+      "detail": "31 public-ready, 12 private or pending."
+    },
+    {
+      "label": "Videos",
+      "value": "7",
+      "detail": "Short clips waiting for wrap-up review."
+    },
+    {
+      "label": "Notes",
+      "value": "12",
+      "detail": "Volunteer, conditions and result notes."
+    }
+  ],
+  "mapLayers": [
+    {
+      "label": "Event zone",
+      "value": "Broad public area",
+      "detail": "Use broad zones first, not precise private spots."
+    },
+    {
+      "label": "Condition overlay",
+      "value": "Tide + weather",
+      "detail": "Snapshot supplied by upstream data."
+    },
+    {
+      "label": "Participation",
+      "value": "Attendance + media",
+      "detail": "Useful for committee records and grant evidence."
+    },
+    {
+      "label": "Privacy",
+      "value": "Public/private split",
+      "detail": "Keep sensitive locations and member data restricted."
+    }
+  ]
+}

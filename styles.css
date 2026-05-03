@@ -930,3 +930,248 @@ p {
     display: grid;
   }
 }
+
+.field-hero {
+  background:
+    linear-gradient(90deg, rgba(7, 68, 95, 0.95), rgba(8, 185, 139, 0.66)),
+    var(--deep-ocean);
+}
+
+.safety-strip {
+  background: var(--gold);
+  color: var(--ink);
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.safety-strip .eyebrow {
+  color: var(--deep-ocean);
+}
+
+.safety-strip p:not(.eyebrow) {
+  max-width: 840px;
+}
+
+.field-live {
+  background:
+    linear-gradient(180deg, rgba(143, 216, 238, 0.2), rgba(255, 253, 247, 0)),
+    var(--sand);
+}
+
+.field-live-header {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-bottom: 1.4rem;
+}
+
+.field-live-header p:not(.eyebrow) {
+  color: var(--titanium);
+  margin-top: 0.75rem;
+  max-width: 780px;
+}
+
+.payload-stamp {
+  background: var(--shell);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  min-width: 190px;
+  padding: 1rem;
+}
+
+.payload-stamp span {
+  color: var(--titanium);
+  display: block;
+  font-family: var(--heading);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.payload-stamp strong {
+  color: var(--deep-ocean);
+  display: block;
+  font-family: var(--heading);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.field-kpis,
+.monitor-board,
+.upload-queue,
+.twin-board,
+.time-ribbon,
+.privacy-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.field-kpis {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.field-kpis article,
+.condition-story,
+.window-card,
+.monitor-card,
+.media-card,
+.map-card,
+.privacy-grid article,
+.media-feature {
+  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.field-kpis article {
+  padding: 1.15rem;
+}
+
+.field-kpis span,
+.field-score span,
+.privacy-grid span {
+  color: var(--purple);
+  display: block;
+  font-family: var(--heading);
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.field-kpis p,
+.field-score p,
+.window-card p,
+.monitor-card p,
+.media-card p,
+.map-card p,
+.privacy-grid p,
+.media-feature p:not(.eyebrow) {
+  color: var(--titanium);
+  margin-top: 0.55rem;
+}
+
+.condition-story {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  margin-top: 1rem;
+  padding: 1.3rem;
+}
+
+.condition-story p:not(.eyebrow) {
+  color: var(--titanium);
+  margin-top: 0.7rem;
+}
+
+.field-score {
+  align-items: center;
+  aspect-ratio: 1;
+  background: rgba(8, 185, 139, 0.12);
+  border: 2px solid rgba(8, 185, 139, 0.35);
+  border-radius: 999px;
+  display: grid;
+  justify-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.field-score span {
+  color: var(--deep-ocean);
+  font-size: 3.2rem;
+}
+
+.time-ribbon {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.monitor-board {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.upload-story {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.8fr);
+}
+
+.upload-queue {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.twin-board,
+.privacy-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.window-card,
+.monitor-card,
+.media-card,
+.map-card,
+.privacy-grid article,
+.media-feature {
+  padding: 1.15rem;
+}
+
+.window-card[data-tone="good"],
+.monitor-card[data-tone="good"] {
+  border-top: 5px solid var(--emerald);
+}
+
+.window-card[data-tone="watch"],
+.monitor-card[data-tone="watch"] {
+  border-top: 5px solid var(--gold);
+}
+
+.window-card[data-tone="solunar"] {
+  border-top: 5px solid var(--purple);
+}
+
+.window-card[data-tone="tide"],
+.monitor-card[data-tone="steady"] {
+  border-top: 5px solid var(--ocean);
+}
+
+.window-card[data-tone="media"],
+.map-card {
+  border-top: 5px solid var(--floral);
+}
+
+@media (max-width: 980px) {
+  .field-live-header,
+  .condition-story,
+  .upload-story {
+    grid-template-columns: 1fr;
+  }
+
+  .field-kpis,
+  .time-ribbon,
+  .monitor-board,
+  .upload-queue,
+  .twin-board,
+  .privacy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field-score {
+    aspect-ratio: auto;
+    border-radius: 8px;
+    justify-items: start;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 720px) {
+  .field-kpis,
+  .time-ribbon,
+  .monitor-board,
+  .upload-queue,
+  .twin-board,
+  .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+}

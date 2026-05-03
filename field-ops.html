@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Future field operations visual layer for Point Lookout Fishing Club: solunar, tides, weather monitors, team GPS consent, uploads and digital twin storytelling.">
+    <title>Field Ops | Point Lookout Fishing Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-mark" href="index.html" aria-label="Point Lookout Fishing Club home">
+          <span>Point Lookout</span>
+          <strong>Fishing Club</strong>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Dashboard</a>
+          <a href="commerce.html">Commerce</a>
+          <a href="processes.html">Processes</a>
+          <a aria-current="page" href="field-ops.html">Field Ops</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero field-hero" aria-labelledby="field-title">
+        <div>
+          <p class="eyebrow">Visual field intelligence</p>
+          <h1 id="field-title">Latest field data, converted into a story board</h1>
+          <p>
+            This page is designed to read `data/latest-field-data.json`, which can be updated later by a separate agent stream or cron job. The website concentrates on display, sense-making and committee-friendly storytelling.
+          </p>
+        </div>
+      </section>
+
+      <section class="section safety-strip" aria-labelledby="safety-title">
+        <div>
+          <p class="eyebrow">Safety boundary</p>
+          <h2 id="safety-title">Planning context, not navigation advice</h2>
+          <p>
+            The visual layer can make conditions easier to understand, but official warnings, local judgement and on-water safety procedures stay above any website score or generated summary.
+          </p>
+        </div>
+      </section>
+
+      <section class="section field-live" id="latest" aria-labelledby="latest-title">
+        <div class="field-live-header">
+          <div>
+            <p class="eyebrow">Latest payload</p>
+            <h2 id="latest-title" data-field="event.name">Field operations board</h2>
+            <p data-field="story.summary">
+              Waiting for the latest field data payload.
+            </p>
+          </div>
+          <div class="payload-stamp">
+            <span>Updated</span>
+            <strong data-field="generatedAtLabel">Sample data</strong>
+          </div>
+        </div>
+
+        <div class="field-kpis" aria-label="Current field summary">
+          <article>
+            <span data-field="tide.state">Rising</span>
+            <p data-field="tide.detail">Next tide window pending.</p>
+          </article>
+          <article>
+            <span data-field="weather.headline">Weather watch</span>
+            <p data-field="weather.detail">Monitor summary pending.</p>
+          </article>
+          <article>
+            <span data-field="team.headline">Team status</span>
+            <p data-field="team.detail">Check-in summary pending.</p>
+          </article>
+          <article>
+            <span data-field="media.headline">Media queue</span>
+            <p data-field="media.detail">Upload summary pending.</p>
+          </article>
+        </div>
+
+        <div class="condition-story">
+          <div>
+            <p class="eyebrow">Narrative readout</p>
+            <h3 data-field="story.headline">The board is ready for incoming data</h3>
+            <p data-field="story.longform">
+              A cron job or agent can update the JSON payload, and this page will convert it into readable visual blocks for members and committee.
+            </p>
+          </div>
+          <div class="field-score" aria-label="Planning score">
+            <span data-field="score.value">--</span>
+            <p data-field="score.label">Planning signal</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pale" id="windows" aria-labelledby="windows-title">
+        <div class="section-heading">
+          <p class="eyebrow">Time windows</p>
+          <h2 id="windows-title">Solunar, tide and event windows as a visual ribbon</h2>
+          <p>
+            The page does not need to know where the data came from. It only needs a clean list of labelled windows from the upstream agent.
+          </p>
+        </div>
+        <div class="time-ribbon" data-window-list aria-label="Field windows"></div>
+      </section>
+
+      <section class="section" id="monitors" aria-labelledby="monitors-title">
+        <div class="section-heading">
+          <p class="eyebrow">Monitor tiles</p>
+          <h2 id="monitors-title">Weather and condition points become readable cards</h2>
+          <p>
+            The upstream stream can provide wind, swell, tide, storm, UV, sea-state or any other monitor. This page renders the latest values with a calm tone system.
+          </p>
+        </div>
+        <div class="monitor-board" data-monitor-list aria-label="Weather and condition monitor tiles"></div>
+      </section>
+
+      <section class="section pale" id="team" aria-labelledby="team-title">
+        <div class="section-heading">
+          <p class="eyebrow">Team coordination</p>
+          <h2 id="team-title">Location sharing is shown as consent status, not public tracking</h2>
+          <p>
+            A future live map should only show event-bound, opt-in team locations to authorised organisers. The public prototype can tell the story without exposing anyone's precise location.
+          </p>
+        </div>
+        <div class="privacy-grid">
+          <article>
+            <span data-field="team.checkedIn">0</span>
+            <h3>Checked in</h3>
+            <p>People marked as present for the event or working bee.</p>
+          </article>
+          <article>
+            <span data-field="team.sharing">0</span>
+            <h3>Sharing location</h3>
+            <p>Opt-in, event-bound sharing only. No background tracking by default.</p>
+          </article>
+          <article>
+            <span data-field="team.expiry">Event end</span>
+            <h3>Location expiry</h3>
+            <p>Live sharing should expire automatically after the event window.</p>
+          </article>
+          <article>
+            <span data-field="team.visibility">Private</span>
+            <h3>Visibility</h3>
+            <p>Authorised roles only, never a public location board.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="uploads" aria-labelledby="uploads-title">
+        <div class="section-heading">
+          <p class="eyebrow">Upload storytelling</p>
+          <h2 id="uploads-title">Photos, video and notes become evidence trails</h2>
+          <p>
+            The display layer can show counts, permission status and story highlights while the actual media storage is handled somewhere else.
+          </p>
+        </div>
+        <div class="upload-story">
+          <div class="upload-queue" data-media-list aria-label="Media queue"></div>
+          <div class="media-feature">
+            <p class="eyebrow">Featured story</p>
+            <h3 data-field="media.featureTitle">Competition wrap-up pending</h3>
+            <p data-field="media.featureBody">The next uploaded content bundle can become a public wrap-up, committee evidence note or grant-ready activity summary.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pale" id="digital-twin" aria-labelledby="twin-title">
+        <div class="section-heading">
+          <p class="eyebrow">Digital twin pathway</p>
+          <h2 id="twin-title">Clean field data becomes future local mapping</h2>
+          <p>
+            The digital twin can start as a visual story: broad zones, time windows, conditions, participation and media. Precision and privacy can be added only where they are appropriate.
+          </p>
+        </div>
+        <div class="twin-board" data-map-list aria-label="Digital twin layers"></div>
+      </section>
+
+      <section class="section evidence-band" aria-labelledby="contract-title">
+        <div class="section-heading">
+          <p class="eyebrow">Data contract</p>
+          <h2 id="contract-title">The page expects a simple JSON payload</h2>
+          <p>
+            `data/latest-field-data.json` is the handoff point. A cron job, separate agent or future backend can refresh that file without redesigning the page.
+          </p>
+        </div>
+        <div class="evidence-grid">
+          <article>
+            <h3>Latest snapshot</h3>
+            <p>Generated time, event name, location label and short narrative summary.</p>
+          </article>
+          <article>
+            <h3>Windows</h3>
+            <p>Labelled tide, solunar, weather, event and media windows for the visual ribbon.</p>
+          </article>
+          <article>
+            <h3>Monitors</h3>
+            <p>Any current data point with label, value, detail and tone.</p>
+          </article>
+          <article>
+            <h3>Stories</h3>
+            <p>Upload counts, permission state, team status and future map layers.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Point Lookout Fishing Club community platform prototype.</p>
+      <p>Field ops features are visual scaffolding only. No live GPS or upload service is connected.</p>
+    </footer>
+
+    <button class="to-top" type="button" data-to-top aria-label="Back to top">Top</button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -18,8 +18,11 @@ The goal is to give the secretary and committee a working interface they can ins
 - `index.html` - public dashboard and prototype overview.
 - `commerce.html` - Stripe-ready memberships, competition fees, fundraisers and merchandise.
 - `processes.html` - membership and committee meeting process flows.
+- `field-ops.html` - visual field-ops board for latest tide, solunar, weather, GPS, upload and digital-twin snapshots.
 - `roadmap.html` - AGM roadmap and next actions.
 - `docs/stripe-commerce-plan.md` - plain-English Stripe setup plan.
+- `docs/field-data-contract.md` - JSON handoff contract for a future agent stream or cron job.
+- `data/latest-field-data.json` - sample field snapshot used by the Field Ops page.
 
 ## Sources Used
 
@@ -44,9 +47,23 @@ The goal is to give the secretary and committee a working interface they can ins
   - Billing only for approved recurring renewals.
   - API version verified as `2026-02-25.clover` on Stripe documentation.
 
+## Field Ops Data Layer
+
+`field-ops.html` does not fetch live tide, weather or GPS data itself.
+
+It reads a simple JSON snapshot from:
+
+```text
+data/latest-field-data.json
+```
+
+That file can later be updated by a separate agent stream, cron job or backend. Keep precise GPS, private member data, emergency contacts and private media URLs out of any public JSON file.
+
 ## Running Locally
 
 This is a static site. You can open `index.html` directly in a browser.
+
+For the Field Ops JSON loading, use the local server option below.
 
 For a local server:
 

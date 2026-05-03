@@ -25,3 +25,11 @@ This repo is for an exploratory Point Lookout Fishing Club website prototype. Ke
 - Checkout Sessions when forms and metadata are needed.
 - Billing only if annual auto-renewal is approved.
 - No Stripe secret keys in repo files.
+
+## Field Ops Direction
+
+- `field-ops.html` is a visualisation layer, not a data-fetching engine.
+- It reads `data/latest-field-data.json`.
+- A separate agent stream, cron job or backend can update that JSON later.
+- Do not place real member GPS coordinates, phone numbers, emergency contacts or private media URLs in public repo files.
+- Keep field data storytelling broad, consent-aware and safety-first.

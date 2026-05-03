@@ -95,3 +95,100 @@ if (topButton) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+const fallbackFieldData = {
+  generatedAtLabel: "Sample payload",
+  event: { name: "Field operations board" },
+  score: { value: "--", label: "Planning signal" },
+  story: {
+    headline: "The board is ready for incoming data",
+    summary: "A separate agent or cron job can update the JSON payload.",
+    longform: "The display layer converts latest field data into committee-friendly visual blocks."
+  },
+  tide: { state: "Tide pending", detail: "Waiting for latest payload." },
+  weather: { headline: "Weather pending", detail: "Waiting for latest payload." },
+  team: {
+    headline: "Team pending",
+    detail: "Waiting for latest payload.",
+    checkedIn: "0",
+    sharing: "0",
+    expiry: "Event end",
+    visibility: "Private"
+  },
+  media: {
+    headline: "Media pending",
+    detail: "Waiting for latest payload.",
+    featureTitle: "Story bundle pending",
+    featureBody: "Uploads can become public wrap-ups, committee records or grant-ready evidence."
+  },
+  windows: [],
+  monitors: [],
+  mediaItems: [],
+  mapLayers: []
+};
+
+function getFieldValue(data, path) {
+  return path.split(".").reduce((value, key) => {
+    if (value && Object.prototype.hasOwnProperty.call(value, key)) {
+      return value[key];
+    }
+    return undefined;
+  }, data);
+}
+
+function renderSimpleCards(target, items, className) {
+  if (!target) return;
+  target.replaceChildren();
+
+  items.forEach((item) => {
+    const card = document.createElement("article");
+    card.className = className;
+    if (item.tone || item.rating || item.type) {
+      card.dataset.tone = item.tone || item.rating || item.type;
+    }
+
+    const label = document.createElement("p");
+    label.className = "category";
+    label.textContent = item.time ? `${item.time} | ${item.type || "window"}` : item.label || "Item";
+
+    const title = document.createElement("h3");
+    title.textContent = item.time ? item.label : item.value || item.label || "Pending";
+
+    const detail = document.createElement("p");
+    detail.textContent = item.detail || item.rating || "Ready for latest data.";
+
+    card.append(label, title, detail);
+    target.appendChild(card);
+  });
+}
+
+function renderFieldData(data) {
+  document.querySelectorAll("[data-field]").forEach((node) => {
+    const path = node.getAttribute("data-field");
+    const value = path ? getFieldValue(data, path) : undefined;
+    if (value !== undefined && value !== null) {
+      node.textContent = String(value);
+    }
+  });
+
+  renderSimpleCards(document.querySelector("[data-window-list]"), data.windows || [], "window-card");
+  renderSimpleCards(document.querySelector("[data-monitor-list]"), data.monitors || [], "monitor-card");
+  renderSimpleCards(document.querySelector("[data-media-list]"), data.mediaItems || [], "media-card");
+  renderSimpleCards(document.querySelector("[data-map-list]"), data.mapLayers || [], "map-card");
+}
+
+async function loadFieldData() {
+  if (!document.querySelector("[data-field], [data-window-list], [data-monitor-list]")) {
+    return;
+  }
+
+  try {
+    const response = await fetch("data/latest-field-data.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Field data unavailable");
+    renderFieldData(await response.json());
+  } catch {
+    renderFieldData(fallbackFieldData);
+  }
+}
+
+loadFieldData();
