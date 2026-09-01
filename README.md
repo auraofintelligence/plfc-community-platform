@@ -1,5 +1,28 @@
 # Point Lookout Fishing Club Community Platform
 
+<!-- github-organisation:start -->
+
+## Project links and history
+
+- First substantive build: 3 May 2026.
+- GitHub repository: [plfc-community-platform](https://github.com/auraofintelligence/plfc-community-platform).
+- Public site: [visit the public site](https://auraofintelligence.github.io/plfc-community-platform/).
+
+## Related public projects
+
+Each link below reflects an evidenced family, lineage or direct connection. This project has 6 relevant public connections.
+
+### Point Lookout Fishing Club digital builds
+
+- [plfc-ai-agent-md-forms](https://github.com/auraofintelligence/plfc-ai-agent-md-forms) - [public page](https://auraofintelligence.github.io/plfc-ai-agent-md-forms/) - earlier build; plfc-ai-agent-md-forms is later, explicit cross-reference, ordered build lineage, shared named build family.
+- [PLFC_01](https://github.com/auraofintelligence/PLFC_01) - [public page](https://auraofintelligence.github.io/PLFC_01/) - later build; PLFC_01 is earlier, explicit cross-reference, ordered build lineage, shared named build family.
+- [PLFC_02](https://github.com/auraofintelligence/PLFC_02) - [public page](https://auraofintelligence.github.io/PLFC_02/) - later build; PLFC_02 is earlier, explicit cross-reference, ordered build lineage, shared named build family.
+- [PLFC_2026_Data](https://github.com/auraofintelligence/PLFC_2026_Data) - [public page](https://auraofintelligence.github.io/PLFC_2026_Data/) - later build; PLFC_2026_Data is earlier, explicit cross-reference, ordered build lineage, shared named build family.
+- [PLFC_Live](https://github.com/auraofintelligence/PLFC_Live) - [public page](https://auraofintelligence.github.io/PLFC_Live/) - later build; PLFC_Live is earlier, explicit cross-reference, ordered build lineage, shared named build family.
+- [PLFC_web_2026](https://github.com/auraofintelligence/PLFC_web_2026) - [public page](https://auraofintelligence.github.io/PLFC_web_2026/) - later build; PLFC_web_2026 is earlier, explicit cross-reference, ordered build lineage, shared named build family.
+
+<!-- github-organisation:end -->
+
 Exploratory open-source static website prototype for the Point Lookout Fishing Club.
 
 The goal is to give the secretary and committee a working interface they can inspect, discuss and improve before replacing or extending the current public site.
